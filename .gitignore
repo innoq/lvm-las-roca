@@ -18,3 +18,4 @@
 
 # Ignore generated assets
 app/assets/javascripts
+app/assets/stylesheets

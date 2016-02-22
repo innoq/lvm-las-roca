@@ -18,4 +18,6 @@ Then you have the following tasks available:
 
 * `npm run start`: Watch the JavaScript files and compile on every change
 * `npm run test`: Lint the JavaScript files
+* `npm run compile`: Compile the JavaScript and CSS files
 * `npm run webpack`: Compile the JavaScript files
+* `npm run less`: Compile the CSS files
