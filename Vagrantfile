@@ -7,6 +7,8 @@ Vagrant.configure(2) do |config|
   # The box is reachable via lvm-las-roca.vagrant.dev
   config.landrush.enabled = true
 
+  config.ssh.forward_agent = true
+
   config.vm.provider "vmware_fusion" do |v|
     v.vmx["memsize"] = "8056"
     v.vmx["numvcpus"] = "2"
