@@ -1,6 +1,7 @@
 'use strict'
 
 let path = require('path')
+let webpack = require('webpack')
 
 module.exports = {
   entry: './index.js',
@@ -19,5 +20,11 @@ module.exports = {
         cacheDirectory: true
       }
     }]
-  }
+  },
+  devtool: 'source-map',
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin({
+      minimize: true
+    })
+  ]
 }
