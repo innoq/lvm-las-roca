@@ -5,7 +5,8 @@
     "assets": "copy-assets app/assets",
     "webpack": "webpack",
     "webpack-watch": "webpack --progress --colors --watch",
-    "less": "lessc --npm-import --clean-css --source-map-less-inline --source-map-map-inline index.less app/assets/stylesheets/application.css"
+    "less": "lessc --npm-import --clean-css --source-map-less-inline --source-map-map-inline index.less app/assets/stylesheets/application.css",
+    "less-watch": "find index.less | entr npm run less"
   },
   "dependencies": {
     "eslint-config-standard": "^5.1.0",
