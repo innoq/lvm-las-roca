@@ -13,3 +13,8 @@
 /tmp
 
 .vagrant
+/node_modules
+/.eslintcache
+
+# Ignore generated assets
+app/assets/javascripts
