@@ -19,3 +19,5 @@
 # Ignore generated assets
 app/assets/javascripts
 app/assets/stylesheets
+app/assets/fonts
+app/assets/images
