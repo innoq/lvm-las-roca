@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "webpack --progress --colors --watch",
-    "test": "eslint --cache *.js src && echo ✓",
+    "test": "eslint --cache *.js src && lessc --npm-import --lint index.less && echo ✓",
     "compile": "npm run webpack && npm run less && npm run assets",
     "assets": "copy-assets app/assets",
     "webpack": "webpack",
