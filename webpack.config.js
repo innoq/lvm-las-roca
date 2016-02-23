@@ -4,7 +4,7 @@ let path = require('path')
 let webpack = require('webpack')
 
 module.exports = {
-  entry: './index.js',
+  entry: './frontend/index.js',
   output: {
     path: path.join(__dirname, 'app', 'assets', 'javascripts'),
     filename: 'application.js'

@@ -1,12 +1,12 @@
 {
   "scripts": {
-    "test": "eslint --cache *.js src && lessc --npm-import --lint index.less && echo ✓",
+    "test": "eslint --cache frontend/**/*.js src && lessc --npm-import --lint frontend/index.less && echo ✓",
     "compile": "npm run webpack && npm run less && npm run assets",
     "assets": "copy-assets app/assets",
     "webpack": "webpack",
     "webpack-watch": "webpack --progress --colors --watch",
-    "less": "lessc --npm-import --clean-css --source-map-less-inline --source-map-map-inline index.less app/assets/stylesheets/application.css",
-    "less-watch": "find index.less | entr npm run less"
+    "less": "lessc --npm-import --clean-css --source-map-less-inline --source-map-map-inline frontend/index.less app/assets/stylesheets/application.css",
+    "less-watch": "find frontend -name '*less' | entr npm run less"
   },
   "dependencies": {
     "eslint-config-standard": "^5.1.0",
