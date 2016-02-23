@@ -2,10 +2,10 @@
   "scripts": {
     "test": "eslint --cache frontend/**/*.js src && lessc --npm-import --lint frontend/index.less && echo ✓",
     "compile": "npm run webpack && npm run less && npm run assets",
-    "assets": "copy-assets app/assets",
+    "assets": "copy-assets public",
     "webpack": "webpack",
     "webpack-watch": "webpack --progress --colors --watch",
-    "less": "lessc --npm-import --clean-css --source-map-less-inline --source-map-map-inline frontend/index.less app/assets/stylesheets/application.css",
+    "less": "lessc --npm-import --clean-css --source-map-less-inline --source-map-map-inline frontend/index.less public/application.css",
     "less-watch": "find frontend -name '*less' | entr npm run less"
   },
   "dependencies": {
