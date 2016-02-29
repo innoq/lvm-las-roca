@@ -7,7 +7,7 @@ vagrant up
 vagrant ssh
 cd /vagrant
 npm run compile
-npm run server
+npm run foreman
 ```
 
 Now you can visit http://lvm-las-roca.vagrant.dev to see the application.
