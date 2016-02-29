@@ -21,6 +21,9 @@
       with_items: apt_repositories
     - name: Update cache and upgrade
       apt: update_cache=yes upgrade=safe
+    - name: Copy /etc/rc.local
+      copy: src=rc.local dest=/etc/rc.local owner=root group=root mode=0755
+    - shell: bash /etc/rc.local
     - name: Install missing packages
       apt: name={{ item }}
       with_items: apt_packages
