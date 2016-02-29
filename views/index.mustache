@@ -2,4 +2,12 @@
   <h1>Welcome!</h1>
 
   <p>Hi {{ title }}</p>
+
+  <ul class='household'>
+  {{# household }}
+    <li>
+    {{ name }} ({{ beziehung }})
+    </li>
+  {{/ household }}
+  </ul>
 </div>
