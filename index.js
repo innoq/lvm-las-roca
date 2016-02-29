@@ -13,13 +13,20 @@ app.set('layout', 'layout')
 app.use('/assets', express.static('public'))
 
 app.get('/', function (req, res) {
-  backend.household('4711', (err, data) => {
-    if (err) {
-      throw err
+  backend.household('4711', (householdErr, household) => {
+    if (householdErr) {
+      throw householdErr
     }
-    res.render('index', {
-      household: data,
-      title: 'World'
+    backend.contracts('4711', (contractErr, contracts) => {
+      if (contractErr) {
+        throw contractErr
+      }
+
+      res.render('index', {
+        household: household,
+        contracts: contracts,
+        title: 'World'
+      })
     })
   })
 })

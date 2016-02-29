@@ -3,11 +3,19 @@
 
   <p>Hi {{ title }}</p>
 
+  <h2>Verträge</h2>
+
+  <ul class='contracts'>
+  {{# contracts }}
+    <li>{{ sparte }}</li>
+  {{/ contracts }}
+  </ul>
+
+  <h2>Haushalt</h2>
+
   <ul class='household'>
   {{# household }}
-    <li>
-    {{ name }} ({{ beziehung }})
-    </li>
+    <li>{{ name }} ({{ beziehung }})</li>
   {{/ household }}
   </ul>
 </div>
