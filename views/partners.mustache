@@ -6,28 +6,50 @@
     <h1>Kundendeckblatt</h1>
   </header>
 
-  <h2>Kontakthistorie</h2>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="listing-header">
+        <h2>Kontakthistorie</h2>
+      </div>
 
-  <ul class='contacts'>
-  {{# contacts }}
-    <li>{{ zeit }} ({{ kontaktart }})</li>
-  {{/ contacts }}
-  </ul>
+      <div class="listing">
+        <ul>
+        {{# contacts }}
+          <li>{{ zeit }} ({{ kontaktart }})</li>
+        {{/ contacts }}
+        </ul>
+      </div>
+    </div>
 
-  <h2>Haushalt</h2>
+    <div class="col-md-4">
+      <div class="listing-header">
+        <h2>Haushalt</h2>
+      </div>
 
-  <ul class='household'>
-  {{# household }}
-    <li>{{ name }} ({{ beziehung }})</li>
-  {{/ household }}
-  </ul>
+      <div class="listing">
+        <ul>
+        {{# household }}
+          <li>{{ name }} ({{ beziehung }})</li>
+        {{/ household }}
+        </ul>
+      </div>
+    </div>
+  </div>
 
-  <h2>Verträge</h2>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="listing-header">
+        <h2>Verträge</h2>
+      </div>
 
-  <ul class='contracts'>
-  {{# contracts }}
-    <li>{{ sparte }}</li>
-  {{/ contracts }}
-  </ul>
+      <div class="listing">
+        <ul>
+        {{# contracts }}
+          <li>{{ sparte }}</li>
+        {{/ contracts }}
+        </ul>
+      </div>
+    </div>
+  </div>
 
 </div>
