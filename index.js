@@ -23,6 +23,7 @@ app.get('/result', (req, res) => {
   ]).then((result) => {
     let foundPartners = result[0].map((el) => {
       return {
+        url: `/partners/${el.partnerId}`,
         honorific: el.anrede,
         name: el.name,
         address: el.anschrift,
