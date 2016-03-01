@@ -6,12 +6,12 @@
     <h1>Kundendeckblatt</h1>
   </header>
 
-  <h2>Verträge</h2>
+  <h2>Kontakthistorie</h2>
 
-  <ul class='contracts'>
-  {{# contracts }}
-    <li>{{ sparte }}</li>
-  {{/ contracts }}
+  <ul class='contacts'>
+  {{# contacts }}
+    <li>{{ zeit }} ({{ kontaktart }})</li>
+  {{/ contacts }}
   </ul>
 
   <h2>Haushalt</h2>
@@ -21,4 +21,13 @@
     <li>{{ name }} ({{ beziehung }})</li>
   {{/ household }}
   </ul>
+
+  <h2>Verträge</h2>
+
+  <ul class='contracts'>
+  {{# contracts }}
+    <li>{{ sparte }}</li>
+  {{/ contracts }}
+  </ul>
+
 </div>

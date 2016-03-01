@@ -56,13 +56,15 @@ app.get('/partners/:id', (req, res) => {
   Promise.all([
     backend.household(req.params.id),
     backend.contracts(req.params.id),
-    backend.partner(req.params.id)
+    backend.partner(req.params.id),
+    backend.contacts(req.params.id)
   ]).then((result) => {
     res.render('partners', {
       branches: branches,
       household: result[0],
       contracts: result[1],
-      partner: result[2]
+      partner: result[2],
+      contacts: result[3]
     })
   }, (err) => {
     // TODO: Add an error page template
