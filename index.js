@@ -17,8 +17,27 @@ app.get('/', (req, res) => {
 })
 
 app.get('/result', (req, res) => {
-  res.render('search_results', {
-    query: req.query['query']
+  let query = req.query['query']
+  Promise.all([
+    backend.findPartner(query)
+  ]).then((result) => {
+    let foundPartners = result[0].map((el) => {
+      return {
+        honorific: el.anrede,
+        name: el.name,
+        address: el.anschrift,
+        dob: el.geburtsdatum,
+        age: 42 // TODO: add age calculation
+      }
+    })
+
+    res.render('search_results', {
+      results: foundPartners,
+      query: query
+    })
+  }, (err) => {
+    // TODO: Add an error page template
+    res.send(`An error occurred: ${err}`)
   })
 })
 
