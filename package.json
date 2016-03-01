@@ -18,7 +18,7 @@
     "express": "^4.13.4",
     "foreman": "^1.4.1",
     "install": "^0.4.4",
-    "lasrest": "git+ssh://git@github.com/grueny/lasrest.git#fix-syntax",
+    "lasrest": "git+ssh://git@github.com/grueny/lasrest.git",
     "less": "^2.6.0",
     "less-plugin-clean-css": "^1.5.1",
     "less-plugin-npm-import": "^2.1.0",
