@@ -12,18 +12,20 @@ app.set('layout', 'layout')
 // Mount the assets
 app.use('/assets', express.static('public'))
 
-app.get('/', function (req, res) {
-  backend.household('4711').then((household) => {
-    backend.contracts('4711').then((contracts) => {
-      res.render('index', {
-        household: household,
-        contracts: contracts,
-        title: 'World'
-      })
-    }, (err) => { throw err })
-  }, (err) => { throw err })
+app.get('/', (req, res) => {
+  Promise.all([
+    backend.household('4711'),
+    backend.contracts('4711')
+  ]).then((result) => {
+    res.render('index', {
+      household: result[0],
+      contracts: result[1],
+      title: 'World'
+    })
+  }, (err) => {
+    // TODO: Add an error page template
+    res.send(`An error occurred: ${err}`)
+  })
 })
 
-app.listen(8080, function () {
-  console.log('Listening on port 8080!')
-})
+app.listen(8080, () => console.log('Listening on port 8080!'))
