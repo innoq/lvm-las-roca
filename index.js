@@ -13,22 +13,15 @@ app.set('layout', 'layout')
 app.use('/assets', express.static('public'))
 
 app.get('/', function (req, res) {
-  backend.household('4711', (householdErr, household) => {
-    if (householdErr) {
-      throw householdErr
-    }
-    backend.contracts('4711', (contractErr, contracts) => {
-      if (contractErr) {
-        throw contractErr
-      }
-
+  backend.household('4711').then((household) => {
+    backend.contracts('4711').then((contracts) => {
       res.render('index', {
         household: household,
         contracts: contracts,
         title: 'World'
       })
-    })
-  })
+    }, (err) => { throw err })
+  }, (err) => { throw err })
 })
 
 app.listen(8080, function () {
