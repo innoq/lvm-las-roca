@@ -13,13 +13,11 @@ app.set('layout', 'layout')
 app.use('/assets', express.static('public'))
 
 app.get('/', (req, res) => {
-  // TODO: search form
-  res.send('Welcome')
+  res.render('search', {})
 })
 
 app.get('/result', (req, res) => {
-  // TODO: search result
-  res.send('Result')
+  res.render('search_results', {})
 })
 
 app.get('/partners/:id', (req, res) => {
