@@ -17,7 +17,9 @@ app.get('/', (req, res) => {
 })
 
 app.get('/result', (req, res) => {
-  res.render('search_results', {})
+  res.render('search_results', {
+    query: req.query['query']
+  })
 })
 
 app.get('/partners/:id', (req, res) => {
