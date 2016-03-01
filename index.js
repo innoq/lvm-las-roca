@@ -3,6 +3,18 @@ const mustacheExpress = require('mustache-express')
 const app = express()
 const backend = require('./lib/backend')
 
+const branches = [
+  { label: "Fonds", classname: "fonds" },
+  { label: "Finanzen", classname: "finanzen" },
+  { label: "Leben", classname: "leben" },
+  { label: "Kranken", classname: "kranken" },
+  { label: "Unfall", classname: "unfall" },
+  { label: "Haftpflicht", classname: "haftpflicht" },
+  { label: "Sach", classname: "sach" },
+  { label: "Recht", classname: "recht" },
+  { label: "KFZ", classname: "kfz" }
+]
+
 // Set up Mustache as the view engine
 app.engine('mustache', mustacheExpress())
 app.set('views', './views')
@@ -43,12 +55,14 @@ app.get('/result', (req, res) => {
 app.get('/partners/:id', (req, res) => {
   Promise.all([
     backend.household(req.params.id),
-    backend.contracts(req.params.id)
+    backend.contracts(req.params.id),
+    backend.partner(req.params.id)
   ]).then((result) => {
     res.render('partners', {
+      branches: branches,
       household: result[0],
       contracts: result[1],
-      title: 'World'
+      partner: result[2]
     })
   }, (err) => {
     // TODO: Add an error page template
