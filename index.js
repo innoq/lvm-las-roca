@@ -13,11 +13,21 @@ app.set('layout', 'layout')
 app.use('/assets', express.static('public'))
 
 app.get('/', (req, res) => {
+  // TODO: search form
+  res.send('Welcome')
+})
+
+app.get('/result', (req, res) => {
+  // TODO: search result
+  res.send('Result')
+})
+
+app.get('/partners/:id', (req, res) => {
   Promise.all([
-    backend.household('4711'),
-    backend.contracts('4711')
+    backend.household(req.params.id),
+    backend.contracts(req.params.id)
   ]).then((result) => {
-    res.render('index', {
+    res.render('partners', {
       household: result[0],
       contracts: result[1],
       title: 'World'
