@@ -32,16 +32,19 @@
 
     <div class="col-md-4">
       <div class="listing-header">
-        <h2>Haushalt</h2>
+        <h2>Netzwerk</h2>
       </div>
 
-      <div class="listing">
-        <ul>
-        {{# household }}
-          <li>{{ name }} ({{ beziehung }})</li>
-        {{/ household }}
-        </ul>
-      </div>
+      <ul class="contact-network">
+      {{# household }}
+        <li>
+          <a href="#" class="h-card">{{ name }}</a>
+          <span class="contact-role">
+            <span class="contact-role-name">{{ beziehung }}</span>
+          </span>
+        </li>
+      {{/ household }}
+      </ul>
     </div>
   </div>
 

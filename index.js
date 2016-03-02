@@ -20,6 +20,19 @@ const contactTypes = {
   Telefon: "icon-call-1-filled"
 }
 
+const enrichHousehold = (people) => {
+  return people.map((person) => {
+    let name = person.name
+
+    if (person.hasOwnProperty("vorname")) {
+      name = `${person.vorname} ${person.name}`
+    }
+    return Object.assign({}, person, {
+      name: name
+    })
+  })
+}
+
 const enrichContacts = (contacts) => {
   return contacts.map((contact) => {
     return Object.assign({}, contact, {
@@ -74,7 +87,7 @@ app.get('/partners/:id', (req, res) => {
   ]).then((result) => {
     res.render('partners', {
       branches: branches,
-      household: result[0],
+      household: enrichHousehold(result[0]),
       contracts: result[1],
       partner: result[2],
       contacts: enrichContacts(result[3])
