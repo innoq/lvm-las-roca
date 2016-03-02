@@ -13,11 +13,20 @@
       </div>
 
       <div class="listing">
-        <ul>
+        <ol class="contact-history-entries filterable list">
         {{# contacts }}
-          <li>{{ zeit }} ({{ kontaktart }})</li>
+          <li>
+            <div class="entry">
+              <span class="contact-history-entry-type"><i data-toggle="tooltip" title="" class="{{ icon }}" data-original-title="Termin"></i>&nbsp;{{ kontaktart }}</span>
+              <time class="contact-history-entry-date" datetime="{{ zeit }}">{{ zeit }}</time>
+              {{# sachbearbeiter }}
+                <span class="contact-history-entry-clerk">{{ sachbearbeiter }}</span>
+              {{/ sachbearbeiter }}
+              <p class="contact-history-entry-subject">{{ titel }}
+            </div>
+          </li>
         {{/ contacts }}
-        </ul>
+        </ol>
       </div>
     </div>
 

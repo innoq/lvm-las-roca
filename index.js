@@ -15,6 +15,19 @@ const branches = [
   { label: "KFZ", classname: "kfz" }
 ]
 
+const contactTypes = {
+  Email: "icon-mail-2-filled",
+  Telefon: "icon-call-1-filled"
+}
+
+const enrichContacts = (contacts) => {
+  return contacts.map((contact) => {
+    return Object.assign({}, contact, {
+      icon: contactTypes[contact.kontaktart]
+    })
+  })
+}
+
 // Set up Mustache as the view engine
 app.engine('mustache', mustacheExpress())
 app.set('views', './views')
@@ -64,7 +77,7 @@ app.get('/partners/:id', (req, res) => {
       household: result[0],
       contracts: result[1],
       partner: result[2],
-      contacts: result[3]
+      contacts: enrichContacts(result[3])
     })
   }, (err) => {
     // TODO: Add an error page template
