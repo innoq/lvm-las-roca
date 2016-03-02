@@ -63,6 +63,15 @@ const enrichContacts = (contacts) => {
   })
 }
 
+const enrichBranches = (branches, contracts) => {
+  return branches.map((branch) => {
+    let contractsForBranch = contracts.filter((contract) => contract.sparte == branch.label)
+    return Object.assign({}, branch, {
+      numberOfContracts: contractsForBranch.length
+    })
+  })
+}
+
 // Set up Mustache as the view engine
 app.engine('mustache', mustacheExpress())
 app.set('views', './views')
@@ -108,7 +117,7 @@ app.get('/partners/:id', (req, res) => {
     backend.contacts(req.params.id)
   ]).then((result) => {
     res.render('partners', {
-      branches: branches,
+      branches: enrichBranches(branches, result[1]),
       household: enrichHousehold(result[0]),
       contracts: enrichContracts(result[1]),
       partner: result[2],

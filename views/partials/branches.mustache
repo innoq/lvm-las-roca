@@ -11,7 +11,9 @@
                 <a href="#" class="branch-selector-item-link">
                     <i class="branch-selector-item-icon {{ classname }}"></i>
                     <span class="branch-selector-item-caption">{{ label }}</span>
-                    <span class="branch-selector-item-indicator label label-default"></span>
+                    {{# numberOfContracts }}
+                      <span class="branch-selector-item-indicator label label-default">{{ numberOfContracts }}</span>
+                    {{/ numberOfContracts }}
                 </a>
             </li>
           {{/ branches }}
