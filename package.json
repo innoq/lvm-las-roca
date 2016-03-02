@@ -1,7 +1,7 @@
 {
   "scripts": {
     "foreman": "nf start",
-    "server": "node --use-strict .",
+    "server": "nodemon -L --use-strict .",
     "lasrest": "node node_modules/lasrest",
     "test": "eslint --cache frontend/**/*.js src && lessc --npm-import --lint frontend/index.less && echo ✓",
     "compile": "npm run webpack && npm run less && npm run assets",
@@ -25,6 +25,7 @@
     "lvm-las-assets": "git+ssh://git@github.com/innoq/lvm-las-assets.git",
     "mustache": "^2.2.1",
     "mustache-express": "^1.2.2",
+    "nodemon": "^1.9.1",
     "npm": "^3.7.3"
   },
   "devDependencies": {
