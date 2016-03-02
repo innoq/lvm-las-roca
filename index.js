@@ -12,8 +12,12 @@ const branches = [
   { label: "Haftpflicht", classname: "haftpflicht" },
   { label: "Sach", classname: "sach" },
   { label: "Recht", classname: "recht" },
-  { label: "KFZ", classname: "kfz" }
+  { label: "Kraftfahrt", classname: "kfz", icon: "icon-car-2-filled" }
 ]
+
+const findIconForBranch = (label) => {
+  return branches.find((branch) => branch.label == label).icon
+}
 
 const contactTypes = {
   Email: "icon-mail-2-filled",
@@ -29,6 +33,24 @@ const enrichHousehold = (people) => {
     }
     return Object.assign({}, person, {
       name: name
+    })
+  })
+}
+
+const formatMoney = (amount) => {
+  let euros = Math.floor(amount / 100)
+  let cents = amount % 100
+  if (cents < 10) {
+    cents = `0${cents}`
+  }
+  return `${euros},${cents} €`
+}
+
+const enrichContracts = (contracts) => {
+  return contracts.map((contract) => {
+    return Object.assign({}, contract, {
+      beitrag: formatMoney(contract.beitragZent),
+      icon: findIconForBranch(contract.sparte)
     })
   })
 }
@@ -88,7 +110,7 @@ app.get('/partners/:id', (req, res) => {
     res.render('partners', {
       branches: branches,
       household: enrichHousehold(result[0]),
-      contracts: result[1],
+      contracts: enrichContracts(result[1]),
       partner: result[2],
       contacts: enrichContacts(result[3])
     })

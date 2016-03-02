@@ -54,12 +54,27 @@
         <h2>Verträge</h2>
       </div>
 
-      <div class="listing">
-        <ul>
-        {{# contracts }}
-          <li>{{ sparte }}</li>
-        {{/ contracts }}
-        </ul>
+      <div class="table-responsive">
+        <div class="listing">
+          <table class="portfolio-overview table sortable filterable">
+            <thead>
+              <tr>
+                <th class="sort" data-sort="col-portfolio-branch">Sparte</th>
+                <th class="sort text-right" data-sort="col-portfolio-payment-amount">Beitrag</th>
+              </tr>
+            </thead>
+            <tbody class="list">
+              {{# contracts }}
+                <tr>
+                <td class="col-portfolio-branch">
+                  <i class="{{ icon }}"></i>
+                  <span class="branch-selector-item-caption">{{ sparte }}</span>
+                </td>
+                <td class="col-portfolio-payment-amount text-right">{{ beitrag }}</td>
+                </tr>
+              {{/ contracts }}
+            </tbody>
+        </div>
       </div>
     </div>
   </div>
