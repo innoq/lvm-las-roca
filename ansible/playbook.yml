@@ -24,6 +24,8 @@
     - name: Copy /etc/rc.local
       copy: src=rc.local dest=/etc/rc.local owner=root group=root mode=0755
     - shell: bash /etc/rc.local
+    - name: Copy /etc/ssh/ssh_known_hosts
+      copy: src=ssh_known_hosts dest=/etc/ssh/ssh_known_hosts owner=root group=root mode=0644
     - name: Install missing packages
       apt: name={{ item }}
       with_items: apt_packages

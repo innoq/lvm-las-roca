@@ -10,7 +10,7 @@ npm run compile
 npm run foreman
 ```
 
-Now you can visit http://lvm-las-roca.vagrant.dev to see the application.
+Now you can visit http://localhost:8080 to see the application.
 
 ## JavaScript
 
