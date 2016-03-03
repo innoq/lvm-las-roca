@@ -3,6 +3,75 @@ const mustacheExpress = require('mustache-express')
 const app = express()
 const backend = require('./lib/backend')
 
+const branches = [
+  { label: 'Fonds', classname: 'fonds' },
+  { label: 'Finanzen', classname: 'finanzen' },
+  { label: 'Leben', classname: 'leben' },
+  { label: 'Kranken', classname: 'kranken' },
+  { label: 'Unfall', classname: 'unfall' },
+  { label: 'Haftpflicht', classname: 'haftpflicht' },
+  { label: 'Sach', classname: 'sach' },
+  { label: 'Recht', classname: 'recht' },
+  { label: 'Kraftfahrt', classname: 'kfz', icon: 'icon-car-2-filled' }
+]
+
+const findIconForBranch = (label) => {
+  return branches.find((branch) => branch.label === label).icon
+}
+
+const contactTypes = {
+  Email: 'icon-mail-2-filled',
+  Telefon: 'icon-call-1-filled'
+}
+
+const enrichHousehold = (people) => {
+  return people.map((person) => {
+    let name = person.name
+
+    if (person.hasOwnProperty('vorname')) {
+      name = `${person.vorname} ${person.name}`
+    }
+    return Object.assign({}, person, {
+      name: name
+    })
+  })
+}
+
+const formatMoney = (amount) => {
+  let euros = Math.floor(amount / 100)
+  let cents = amount % 100
+  if (cents < 10) {
+    cents = `0${cents}`
+  }
+  return `${euros},${cents} €`
+}
+
+const enrichContracts = (contracts) => {
+  return contracts.map((contract) => {
+    return Object.assign({}, contract, {
+      beitrag: formatMoney(contract.beitragZent),
+      icon: findIconForBranch(contract.sparte)
+    })
+  })
+}
+
+const enrichContacts = (contacts) => {
+  return contacts.map((contact) => {
+    return Object.assign({}, contact, {
+      icon: contactTypes[contact.kontaktart]
+    })
+  })
+}
+
+const enrichBranches = (branches, contracts) => {
+  return branches.map((branch) => {
+    let contractsForBranch = contracts.filter((contract) => contract.sparte === branch.label)
+    return Object.assign({}, branch, {
+      numberOfContracts: contractsForBranch.length
+    })
+  })
+}
+
 // Set up Mustache as the view engine
 app.engine('mustache', mustacheExpress())
 app.set('views', './views')
@@ -43,12 +112,16 @@ app.get('/result', (req, res) => {
 app.get('/partners/:id', (req, res) => {
   Promise.all([
     backend.household(req.params.id),
-    backend.contracts(req.params.id)
+    backend.contracts(req.params.id),
+    backend.partner(req.params.id),
+    backend.contacts(req.params.id)
   ]).then((result) => {
     res.render('partners', {
-      household: result[0],
-      contracts: result[1],
-      title: 'World'
+      branches: enrichBranches(branches, result[1]),
+      household: enrichHousehold(result[0]),
+      contracts: enrichContracts(result[1]),
+      partner: result[2],
+      contacts: enrichContacts(result[3])
     })
   }, (err) => {
     // TODO: Add an error page template
