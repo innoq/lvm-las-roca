@@ -10,4 +10,4 @@
     * Partnerseite
     * Progessive Enhancement der Onebox-Suche (AutoComplete)
 * Do:
-    * Refactoring der Asnwendungsstruktur (Controller, Enricher etc.)
+    * Refactoring der Anwendungsstruktur (Controller, Enricher etc.)
