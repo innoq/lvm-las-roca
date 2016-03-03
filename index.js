@@ -18,10 +18,8 @@ app.get('/', (req, res) => {
 
 app.get('/result', (req, res) => {
   let query = req.query['query']
-  Promise.all([
-    backend.findPartner(query)
-  ]).then((result) => {
-    let foundPartners = result[0].map((el) => {
+  backend.findPartner(query).then((result) => {
+    let foundPartners = result.map((el) => {
       return {
         url: `/partners/${el.partnerId}`,
         honorific: el.anrede,
