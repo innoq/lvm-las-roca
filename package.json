@@ -26,7 +26,8 @@
     "mustache": "^2.2.1",
     "mustache-express": "^1.2.2",
     "nodemon": "^1.9.1",
-    "npm": "^3.7.3"
+    "npm": "^3.7.3",
+    "simplete": "git+ssh://git@github.com:innoq/simplete.git#response_result_filter"
   },
   "devDependencies": {
     "babel-core": "^6.5.2",

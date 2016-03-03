@@ -13,13 +13,31 @@ app.set('layout', 'layout')
 app.use('/assets', express.static('public'))
 
 app.get('/', (req, res) => {
-  // TODO: search form
-  res.send('Welcome')
+  res.render('search', {})
 })
 
 app.get('/result', (req, res) => {
-  // TODO: search result
-  res.send('Result')
+  let query = req.query['query']
+  backend.findPartner(query).then((result) => {
+    let foundPartners = result.map((el) => {
+      return {
+        url: `/partners/${el.partnerId}`,
+        honorific: el.anrede,
+        name: el.name,
+        address: el.anschrift,
+        dob: el.geburtsdatum,
+        age: 42 // TODO: add age calculation
+      }
+    })
+
+    res.render('search_results', {
+      results: foundPartners,
+      query: query
+    })
+  }, (err) => {
+    // TODO: Add an error page template
+    res.send(`An error occurred: ${err}`)
+  })
 })
 
 app.get('/partners/:id', (req, res) => {
