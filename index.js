@@ -4,31 +4,31 @@ const app = express()
 const backend = require('./lib/backend')
 
 const branches = [
-  { label: "Fonds", classname: "fonds" },
-  { label: "Finanzen", classname: "finanzen" },
-  { label: "Leben", classname: "leben" },
-  { label: "Kranken", classname: "kranken" },
-  { label: "Unfall", classname: "unfall" },
-  { label: "Haftpflicht", classname: "haftpflicht" },
-  { label: "Sach", classname: "sach" },
-  { label: "Recht", classname: "recht" },
-  { label: "Kraftfahrt", classname: "kfz", icon: "icon-car-2-filled" }
+  { label: 'Fonds', classname: 'fonds' },
+  { label: 'Finanzen', classname: 'finanzen' },
+  { label: 'Leben', classname: 'leben' },
+  { label: 'Kranken', classname: 'kranken' },
+  { label: 'Unfall', classname: 'unfall' },
+  { label: 'Haftpflicht', classname: 'haftpflicht' },
+  { label: 'Sach', classname: 'sach' },
+  { label: 'Recht', classname: 'recht' },
+  { label: 'Kraftfahrt', classname: 'kfz', icon: 'icon-car-2-filled' }
 ]
 
 const findIconForBranch = (label) => {
-  return branches.find((branch) => branch.label == label).icon
+  return branches.find((branch) => branch.label === label).icon
 }
 
 const contactTypes = {
-  Email: "icon-mail-2-filled",
-  Telefon: "icon-call-1-filled"
+  Email: 'icon-mail-2-filled',
+  Telefon: 'icon-call-1-filled'
 }
 
 const enrichHousehold = (people) => {
   return people.map((person) => {
     let name = person.name
 
-    if (person.hasOwnProperty("vorname")) {
+    if (person.hasOwnProperty('vorname')) {
       name = `${person.vorname} ${person.name}`
     }
     return Object.assign({}, person, {
@@ -65,7 +65,7 @@ const enrichContacts = (contacts) => {
 
 const enrichBranches = (branches, contracts) => {
   return branches.map((branch) => {
-    let contractsForBranch = contracts.filter((contract) => contract.sparte == branch.label)
+    let contractsForBranch = contracts.filter((contract) => contract.sparte === branch.label)
     return Object.assign({}, branch, {
       numberOfContracts: contractsForBranch.length
     })
