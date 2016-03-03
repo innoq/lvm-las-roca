@@ -10,6 +10,8 @@ app.set('views', './views')
 app.set('view engine', 'mustache')
 app.set('layout', 'layout')
 
+app.use(require('./lib/render_without_layout'))
+
 // Mount the assets
 app.use('/assets', express.static('public'))
 
