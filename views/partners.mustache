@@ -17,12 +17,12 @@
         {{# contacts }}
           <li>
             <div class="entry">
-              <span class="contact-history-entry-type"><i data-toggle="tooltip" title="" class="{{ icon }}" data-original-title="Termin"></i>&nbsp;{{ kontaktart }}</span>
-              <time class="contact-history-entry-date" datetime="{{ zeit }}">{{ zeit }}</time>
-              {{# sachbearbeiter }}
-                <span class="contact-history-entry-clerk">{{ sachbearbeiter }}</span>
-              {{/ sachbearbeiter }}
-              <p class="contact-history-entry-subject">{{ titel }}
+              <span class="contact-history-entry-type"><i data-toggle="tooltip" title="" class="{{ icon }}" data-original-title="Termin"></i>&nbsp;{{ type }}</span>
+              <time class="contact-history-entry-date" datetime="{{ time }}">{{ time }}</time>
+              {{# advisor }}
+                <span class="contact-history-entry-clerk">{{ advisor }}</span>
+              {{/ advisor }}
+              <p class="contact-history-entry-subject">{{ title }}
             </div>
           </li>
         {{/ contacts }}
@@ -40,7 +40,7 @@
         <li>
           <a href="#" class="h-card">{{ name }}</a>
           <span class="contact-role">
-            <span class="contact-role-name">{{ beziehung }}</span>
+            <span class="contact-role-name">{{ relationship }}</span>
           </span>
         </li>
       {{/ household }}
@@ -68,9 +68,9 @@
                 <tr>
                 <td class="col-portfolio-branch">
                   <i class="{{ icon }}"></i>
-                  <span class="branch-selector-item-caption">{{ sparte }}</span>
+                  <span class="branch-selector-item-caption">{{ branch }}</span>
                 </td>
-                <td class="col-portfolio-payment-amount text-right">{{ beitrag }}</td>
+                <td class="col-portfolio-payment-amount text-right">{{ formattedFee }}</td>
                 </tr>
               {{/ contracts }}
             </tbody>
