@@ -7,6 +7,7 @@ Vagrant.configure(2) do |config|
   config.ssh.forward_agent = true
 
   config.vm.network "forwarded_port", guest: 80, host: 8080
+  config.vm.network "forwarded_port", guest: 5100, host: 5100
 
   config.vm.provider "vmware_fusion" do |v|
     v.vmx["memsize"] = "8056"
