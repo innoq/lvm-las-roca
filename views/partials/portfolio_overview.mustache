@@ -5,9 +5,9 @@
 <div class="row">
   <div class="col-md-12">
     <ul class="nav nav-tabs scene-contents" role="tablist">
-      <li class="active"><a href="#contracts" class="kbd" role="tab" data-toggle="tab">Verträge</a></li>
-      <li><a href="#proposals" class="kbd" role="tab" data-toggle="tab">Anträge</a></li>
-      <li><a href="#offers" class="kbd" role="tab" data-toggle="tab">Angebote</a></li>
+      <li class="active"><a href="#contracts" class="kbd" role="tab" data-toggle="tab">Verträge ({{ contracts.length }})</a></li>
+      <li><a href="#proposals" class="kbd" role="tab" data-toggle="tab">Anträge ({{ proposals.length }})</a></li>
+      <li><a href="#offers" class="kbd" role="tab" data-toggle="tab">Angebote ({{ offers.length }})</a></li>
     </ul>
   </div>
 </div>
@@ -21,11 +21,11 @@
       </div>
 
       <div id="proposals" class="tab-pane">
-        Anträge
+        {{> proposals }}
       </div>
 
       <div id="offers" class="tab-pane">
-        Angebote
+        {{> offers }}
       </div>
 
     </div>
