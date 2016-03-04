@@ -8,7 +8,12 @@
   </head>
 
   <body>
-    {{> partials/nav }}
+    {{> nav }}
+    {{# partner }}
+      {{> customer_card }}
+      {{> branches }}
+    {{/ partner }}
+
     {{{ yield }}}
 
     <script src="/assets/application.js"></script>

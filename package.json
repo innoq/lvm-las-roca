@@ -24,7 +24,6 @@
     "less-plugin-npm-import": "^2.1.0",
     "lvm-las-assets": "git+ssh://git@github.com/innoq/lvm-las-assets.git",
     "mustache": "^2.2.1",
-    "mustache-express": "^1.2.2",
     "nodemon": "^1.9.1",
     "npm": "^3.7.3",
     "simplete": "git+ssh://git@github.com:innoq/simplete.git#response_result_filter"

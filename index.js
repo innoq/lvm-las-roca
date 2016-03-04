@@ -1,15 +1,16 @@
 const express = require('express')
-const mustacheExpress = require('mustache-express')
 const app = express()
 const searchController = require('./lib/controllers/search')
 const resultController = require('./lib/controllers/result')
 const partnersController = require('./lib/controllers/partners')
 
 // Set up Mustache as the view engine
-app.engine('mustache', mustacheExpress())
+app.engine('mustache', require('./lib/mustache'))
 app.set('views', './views')
 app.set('view engine', 'mustache')
 app.set('layout', 'layout')
+
+app.use(require('./lib/render_without_layout'))
 
 // Mount the assets
 app.use('/assets', express.static('public'))
