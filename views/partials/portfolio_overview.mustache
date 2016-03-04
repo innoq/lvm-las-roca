@@ -1,26 +1,34 @@
 <div class="listing-header">
-  <h2>Bestand <small>Verträge, Anträge, Angebote</small></h2>
+  <h2>Bestand</h2>
 </div>
 
-<div class="table-responsive">
-  <div class="listing">
-    <table class="portfolio-overview table">
-      <thead>
-        <tr>
-          <th class="sort" data-sort="col-portfolio-branch">Sparte</th>
-          <th class="sort text-right" data-sort="col-portfolio-payment-amount">Beitrag</th>
-        </tr>
-      </thead>
-      <tbody class="list">
-        {{# contracts }}
-        <tr>
-          <td class="col-portfolio-branch">
-            <i class="{{ icon }}"></i>
-            <span class="branch-selector-item-caption">{{ branch }}</span>
-          </td>
-          <td class="col-portfolio-payment-amount text-right">{{ formattedFee }}</td>
-        </tr>
-        {{/ contracts }}
-      </tbody>
+<div class="row">
+  <div class="col-md-12">
+    <ul class="nav nav-tabs scene-contents" role="tablist">
+      <li class="active"><a href="#contracts" class="kbd" role="tab" data-toggle="tab">Verträge</a></li>
+      <li><a href="#proposals" class="kbd" role="tab" data-toggle="tab">Anträge</a></li>
+      <li><a href="#offers" class="kbd" role="tab" data-toggle="tab">Angebote</a></li>
+    </ul>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-md-12">
+    <div class="tab-content">
+      <!-- TODO: use `fieldset`s!? Bootstrap doesn't like that though -->
+      <div id="contracts" class="tab-pane active">
+        {{> contracts }}
+      </div>
+
+      <div id="proposals" class="tab-pane">
+        Anträge
+      </div>
+
+      <div id="offers" class="tab-pane">
+        Angebote
+      </div>
+
+    </div>
+  </div>
+</div>
+
