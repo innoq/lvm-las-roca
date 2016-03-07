@@ -8,7 +8,7 @@ helper.setup((browser) => {
     browser.visit('/').then(() => {
       browser.assert.success()
       return browser.fill('Suche', 'Produkt')
-        .pressButton('Submit')
+        .pressButton('Suchen')
     }).then(() => {
       browser.assert.success()
       browser.assert.url({
