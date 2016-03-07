@@ -15,7 +15,15 @@
             <p>
                 <span class="p-post-code">{{ address }}</span>
             </p>
-            <p>{{ age }} Jahre, geb. am <span class="dt-bday">{{ dob }}</span></p>
+            <p>
+              {{ #age }}
+                {{ age }} Jahre
+              {{ /age }}
+
+              {{ #dob }}
+                , geb. am <span class="dt-bday">{{ dob }}</span>
+              {{ /dob }}
+            </p>
         </a>
       </li>
     {{/results}}

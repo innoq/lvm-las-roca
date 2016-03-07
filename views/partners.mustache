@@ -10,12 +10,12 @@
       </div>
 
       <div class="listing">
-        <ol class="contact-history-entries filterable list">
+        <ol class="contact-history-entries list">
         {{# contacts }}
           <li>
             <div class="entry">
               <span class="contact-history-entry-type"><i data-toggle="tooltip" title="" class="{{ icon }}" data-original-title="Termin"></i>&nbsp;{{ type }}</span>
-              <time class="contact-history-entry-date" datetime="{{ time }}">{{ time }}</time>
+              <time class="contact-history-entry-date" datetime="{{ date }}">{{ formattedDate }}</time>
               {{# advisor }}
                 <span class="contact-history-entry-clerk">{{ advisor }}</span>
               {{/ advisor }}
@@ -53,7 +53,7 @@
 
       <div class="table-responsive">
         <div class="listing">
-          <table class="portfolio-overview table sortable filterable">
+          <table class="portfolio-overview table">
             <thead>
               <tr>
                 <th class="sort" data-sort="col-portfolio-branch">Sparte</th>
