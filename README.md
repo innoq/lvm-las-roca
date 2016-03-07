@@ -7,7 +7,7 @@ vagrant up
 vagrant ssh
 cd /vagrant
 npm run compile
-npm run foreman
+npm run server
 ```
 
 Now you can visit http://localhost:8080 to see the application.
