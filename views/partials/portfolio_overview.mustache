@@ -7,13 +7,13 @@
 
     <div class="partner-portfolio">
       <ul class="nav nav-tabs" role="tablist">
-        <li class="active"><a href="#contracts" class="kbd" role="tab" data-toggle="tab">Verträge ({{ contracts.length }})</a></li>
+        <li><a href="#contracts" class="kbd" role="tab" data-toggle="tab">Verträge ({{ contracts.length }})</a></li>
         <li><a href="#proposals" class="kbd" role="tab" data-toggle="tab">Anträge ({{ proposals.length }})</a></li>
         <li><a href="#offers" class="kbd" role="tab" data-toggle="tab">Angebote ({{ offers.length }})</a></li>
       </ul>
 
-      <div class="tab-content">
-        <div id="contracts" class="tab-pane active">
+      <div>
+        <div id="contracts" class="tab-pane">
           {{> contracts }}
         </div>
 
