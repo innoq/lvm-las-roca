@@ -4,31 +4,29 @@
 
 <div class="row">
   <div class="col-md-12">
-    <ul class="nav nav-tabs scene-contents" role="tablist">
-      <li class="active"><a href="#contracts" class="kbd" role="tab" data-toggle="tab">Verträge ({{ contracts.length }})</a></li>
-      <li><a href="#proposals" class="kbd" role="tab" data-toggle="tab">Anträge ({{ proposals.length }})</a></li>
-      <li><a href="#offers" class="kbd" role="tab" data-toggle="tab">Angebote ({{ offers.length }})</a></li>
-    </ul>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-md-12">
-    <div class="tab-content">
-      <!-- TODO: use `fieldset`s!? Bootstrap doesn't like that though -->
-      <div id="contracts" class="tab-pane active">
-        {{> contracts }}
+    <div class="partner-portfolio">
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="active"><a href="#contracts" class="kbd" role="tab" data-toggle="tab">Verträge ({{ contracts.length }})</a></li>
+        <li><a href="#proposals" class="kbd" role="tab" data-toggle="tab">Anträge ({{ proposals.length }})</a></li>
+        <li><a href="#offers" class="kbd" role="tab" data-toggle="tab">Angebote ({{ offers.length }})</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="contracts" class="tab-pane active">
+          {{> contracts }}
+        </div>
+
+        <div id="proposals" class="tab-pane">
+          {{> proposals }}
+        </div>
+
+        <div id="offers" class="tab-pane">
+          {{> offers }}
+        </div>
       </div>
-
-      <div id="proposals" class="tab-pane">
-        {{> proposals }}
-      </div>
-
-      <div id="offers" class="tab-pane">
-        {{> offers }}
-      </div>
-
     </div>
+
   </div>
 </div>
 
