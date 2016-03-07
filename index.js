@@ -19,4 +19,9 @@ app.get('/', searchController.get)
 app.get('/result', resultController.get)
 app.get('/partners/:id', partnersController.get)
 
-app.listen(8080, () => console.log('Listening on port 8080!'))
+module.exports = app
+
+// Only run the application if it was invoked directly (e.g. not required by a test)
+if (module.parent === null) {
+  app.listen(8080, () => console.log('Listening on port 8080!'))
+}
