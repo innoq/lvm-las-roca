@@ -23,5 +23,10 @@ module.exports = app
 
 // Only run the application if it was invoked directly (e.g. not required by a test)
 if (module.parent === null) {
-  app.listen(8080, () => console.log('Listening on port 8080!'))
+  const backend = require('lasrest')
+
+  Promise.all([
+    backend.listen(5100),
+    app.listen(8080)
+  ]).then(() => console.log('Listening on port 8080!'))
 }
