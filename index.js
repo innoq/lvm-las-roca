@@ -3,6 +3,9 @@ const app = express()
 const searchController = require('./lib/controllers/search')
 const resultController = require('./lib/controllers/result')
 const partnersController = require('./lib/controllers/partners')
+const offersController = require('./lib/controllers/offers')
+const proposalsController = require('./lib/controllers/proposals')
+const contractsController = require('./lib/controllers/contracts')
 
 // Set up Mustache as the view engine
 app.engine('mustache', require('./lib/mustache'))
@@ -18,6 +21,9 @@ app.use('/assets', express.static('public'))
 app.get('/', searchController.get)
 app.get('/result', resultController.get)
 app.get('/partners/:id', partnersController.get)
+app.get('/partners/:id/offers', offersController.get)
+app.get('/partners/:id/proposals', proposalsController.get)
+app.get('/partners/:id/contracts', contractsController.get)
 
 module.exports = app
 
