@@ -29,7 +29,7 @@
     * lvm-las-postbox
         * Instrastruktur Spring-Boot
         * Integration lvm-las-assets
-* 9.3. (Lucas: , Marc: 8,5h)
+* 9.3. (Lucas: 4h, Marc: 8,5h)
     * Integration Briefkasten-Anwendung
     * lvm-las-postbox:
         * Templating-Engine
