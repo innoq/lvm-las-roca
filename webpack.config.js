@@ -25,6 +25,9 @@ module.exports = {
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
       minimize: true
-    })
+    }),
+    new webpack.ContextReplacementPlugin(
+        /moment[\/\\]locale$/, /de/
+    )
   ]
 }
