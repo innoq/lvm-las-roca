@@ -3,6 +3,8 @@ import $ from 'jquery'
 import simplete from 'simplete'
 import moment from 'moment'
 
+require('./postbox')
+
 console.log('Welcome')
 
 $(document).ready(() => {
