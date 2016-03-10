@@ -10,7 +10,7 @@ Vagrant.configure(2) do |config|
   config.vm.network "forwarded_port", guest: 5100, host: 5100
 
   config.vm.provider "vmware_fusion" do |v|
-    v.vmx["memsize"] = "8056"
+    v.vmx["memsize"] = "2048"
     v.vmx["numvcpus"] = "2"
     v.vmx["tools.syncTime"] = "TRUE"
     v.vmx["tools.synchronize.restore"] = "TRUE"
