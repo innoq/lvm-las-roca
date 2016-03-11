@@ -9,11 +9,13 @@ console.log('Welcome')
 
 $(() => {
   // init Simplete autocompletion
-  $('.autocomplete').each((_i, field) => {
+  $('[data-complete=auto]').each((_i, field) => {
+    const resultsClass = $(field).data('complete-results')
+
     simplete(field, {
-      itemSelector: '.onebox-results>.list-group-item',
-      minLength: 3,
-      resultWrapper: '.onebox-results',
+      itemSelector: `.${resultsClass}>.list-group-item`,
+      minLength: parseInt($(field).data('complete-min-length')),
+      resultWrapper: `.${resultsClass}`,
       selectedClass: 'current'
     })
   })
