@@ -10,8 +10,10 @@
   <body>
     {{> nav }}
     {{# partner }}
-      {{> customer_card }}
-      {{> branches }}
+      <div data-position="sticky">
+        {{> customer_card }}
+        {{> branches }}
+      </div>
     {{/ partner }}
 
     {{{ yield }}}
