@@ -7,7 +7,7 @@ require('./postbox')
 
 console.log('Welcome')
 
-$(document).ready(() => {
+$(() => {
   // init Simplete autocompletion
   $('.autocomplete').each((_i, field) => {
     simplete(field, {
