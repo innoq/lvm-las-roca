@@ -13,6 +13,8 @@ app.set('views', './views')
 app.set('view engine', 'mustache')
 app.set('layout', 'layout')
 
+app.locals.postbox_url = process.env.POSTBOX_URL || 'http://localhost:9000'
+
 app.use(require('./lib/render_without_layout'))
 
 // Mount the assets
