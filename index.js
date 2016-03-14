@@ -6,6 +6,7 @@ const partnersController = require('./lib/controllers/partners')
 const offersController = require('./lib/controllers/offers')
 const proposalsController = require('./lib/controllers/proposals')
 const contractsController = require('./lib/controllers/contracts')
+const compression = require('compression')
 
 // Set up Mustache as the view engine
 app.engine('mustache', require('./lib/mustache'))
@@ -16,6 +17,8 @@ app.set('layout', 'layout')
 app.locals.postbox_url = process.env.POSTBOX_URL || 'http://localhost:9000'
 
 app.use(require('./lib/render_without_layout'))
+
+app.use(compression())
 
 // Mount the assets
 app.use('/assets', express.static('public'))
