@@ -11,7 +11,7 @@
     "assets": "copy-assets public",
     "webpack": "webpack",
     "webpack-watch": "webpack --progress --colors --watch",
-    "less": "lessc --npm-import --clean-css --source-map-less-inline --source-map-map-inline frontend/index.less public/application.css",
+    "less": "node --use-strict exe/less",
     "less-watch": "nodemon -e less --exec 'npm run less'"
   },
   "dependencies": {

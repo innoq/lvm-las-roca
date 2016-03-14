@@ -2,6 +2,11 @@
 
 let path = require('path')
 let webpack = require('webpack')
+let devtool
+
+if (process.env.NODE_ENV !== 'production') {
+ devtool = 'source-map'
+}
 
 module.exports = {
   entry: './frontend/index.js',
@@ -22,7 +27,7 @@ module.exports = {
       }
     }]
   },
-  devtool: 'source-map',
+  devtool: devtool,
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
       minimize: true
