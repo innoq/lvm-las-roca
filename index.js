@@ -7,12 +7,27 @@ const offersController = require('./lib/controllers/offers')
 const proposalsController = require('./lib/controllers/proposals')
 const contractsController = require('./lib/controllers/contracts')
 const compression = require('compression')
+const inProduction = (process.env.NODE_ENV === 'production')
 
 // Set up Mustache as the view engine
 app.engine('mustache', require('./lib/mustache'))
 app.set('views', './views')
 app.set('view engine', 'mustache')
 app.set('layout', 'layout')
+
+// BasicAuth
+if (inProduction) {
+  const passport = require('passport')
+  const BasicStrategy = require('passport-http').BasicStrategy
+  passport.use(new BasicStrategy((userid, password, done) => {
+    if (userid === 'lvm' && password === 'roca-prototype') {
+      done(null, {})
+    } else {
+      done('Unauthorized')
+    }
+  }))
+  app.use(passport.authenticate('basic', { session: false }))
+}
 
 app.locals.postbox_url = process.env.POSTBOX_URL || 'http://localhost:9000'
 
