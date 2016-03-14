@@ -33,7 +33,8 @@
     * Integration Briefkasten-Anwendung
     * lvm-las-postbox:
         * Templating-Engine
-* 10.3 (Lucas: , Marc: )
-    * ...
-* 11.3 (Lucas: , Marc: )
-    * ...
+* 10.3 (Lucas: 8h, Marc: )
+    * Verbesserungen an der Vagrant Box
+* 11.3 (Lucas: 8h, Marc: )
+    * Wiederverwendbare Frontend Komponenten
+    * Deployment
