@@ -19,6 +19,11 @@
     * Testing: Konzept und Infrastruktur
     * Korrekte Darstellung von Zeitstempeln
     * Portfolio Ansicht
+   
+Zwischenstand:
+* Lucas: 56h
+* Marc: 30,5h
+* Insgesamt 86,5h von 320h
 
 ## KW 10
 
@@ -38,3 +43,9 @@
 * 11.3 (Lucas: 8h, Marc: )
     * Wiederverwendbare Frontend Komponenten
     * Deployment
+
+Zwischenstand:
+* Lucas: 84h
+* Marc: ???h
+* Insgesamt ???h von 320h 
+    
