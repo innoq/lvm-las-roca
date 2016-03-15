@@ -20,6 +20,12 @@
     * Korrekte Darstellung von Zeitstempeln
     * Portfolio Ansicht
 
+### Zwischenstand:
+
+* Lucas: 56h
+* Marc: 30,5h
+* Insgesamt 86,5h von 320h
+
 ## KW 10
 
 * 7.3. (Lucas: 8h, Marc: 8h)
@@ -40,6 +46,14 @@
     * Wiederverwendbare Frontend Komponenten
     * Deployment
 
+### Zwischenstand:
+
+* Lucas: 84h
+* Marc: 65,5h
+* Insgesamt 149,5h von 320h
+
 ## KW 11
 
 * 14.03. (Lucas: , Marc: )
+
+
