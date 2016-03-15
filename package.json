@@ -21,7 +21,7 @@
     "eslint-plugin-standard": "^1.3.2",
     "express": "^4.13.4",
     "install": "^0.4.4",
-    "lasrest": "grueny/lasrest#importable",
+    "lasrest": "grueny/lasrest",
     "less": "^2.6.0",
     "less-plugin-clean-css": "^1.5.1",
     "less-plugin-npm-import": "^2.1.0",
