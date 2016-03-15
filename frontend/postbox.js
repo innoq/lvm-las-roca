@@ -6,7 +6,7 @@ let postboxLink = $('#postbox-link')
 $.ajax(postboxLink.attr('href'), {
 }).done((data) => {
   // success
-  let messagesTable = $(data).find('table.messages-overview')
+  let messagesTable = $('table.messages-overview', $.parseHTML(data))
   let messageCount = messagesTable.find('tbody>tr').length
 
   // set message count
