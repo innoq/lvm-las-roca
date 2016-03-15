@@ -30,6 +30,8 @@
     "mustache": "^2.2.1",
     "nodemon": "^1.9.1",
     "npm": "^3.7.3",
+    "passport": "^0.3.2",
+    "passport-http": "^0.3.0",
     "simplete": "innoq/simplete#response_result_filter"
   },
   "devDependencies": {
