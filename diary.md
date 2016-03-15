@@ -54,6 +54,7 @@
 
 ## KW 11
 
-* 14.03. (Lucas: , Marc: )
-
-
+* 14.03. (Lucas: 8h, Marc: )
+  * Performance Verbesserungen
+* 15.03. (Lucas: 4h, Marc: )
+  * Anpassungen aufgrund von API Änderungen
