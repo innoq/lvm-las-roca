@@ -54,7 +54,8 @@
 
 ## KW 11
 
-* 14.03. (Lucas: 8h, Marc: )
+* 14.03. (Lucas: 8h, Marc: 0h)
   * Performance Verbesserungen
-* 15.03. (Lucas: 4h, Marc: )
+* 15.03. (Lucas: 4h, Marc: 8h)
   * Anpassungen aufgrund von API Änderungen
+  * Backend-Integration Postbox
