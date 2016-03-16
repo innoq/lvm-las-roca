@@ -59,3 +59,7 @@
 * 15.03. (Lucas: 4h, Marc: 8h)
   * Anpassungen aufgrund von API Änderungen
   * Backend-Integration Postbox
+* 16.03. (Lucas: 8h, Marc: )
+  * Meeting wegen API
+  * Umsetzung der API
+  * Anpassung an die API
