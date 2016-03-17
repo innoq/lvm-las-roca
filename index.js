@@ -45,6 +45,7 @@ app.get('/partners/:id/offers', offersController.index)
 app.get('/partners/:id/offers/:offer_id', offersController.show)
 app.get('/partners/:id/proposals', proposalsController.index)
 app.get('/partners/:id/contracts', contractsController.index)
+app.get('/partners/:id/contracts/:contract_id', contractsController.show)
 
 module.exports = app
 
