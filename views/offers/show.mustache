@@ -1,0 +1,35 @@
+<div class="container">
+  <header class="listing-header">
+    <h2>Angebot {{ offer.id }}</h2>
+  </header>
+
+  <dl class="dl-horizontal">
+    <dt>#</dt>
+    <dd>{{ offer.id }}</dd>
+
+    <dt>Beteiligung</dt>
+    <dd>{{ offer.role }}</dd>
+
+    <dt>Agentur</dt>
+    <dd>{{ offer.agency }}</dd>
+
+    <dt>Sparte</dt>
+    <dd>{{ offer.branch }}</dd>
+
+    <dt>Bezug</dt>
+    <dd>{{ offer.incident }}</dd>
+
+    <dt>Schäden</dt>
+    <dd>{{ offer.claims }}</dd>
+
+    <dt>Ablauf</dt>
+    <dd>{{ offer.expire }}</dd>
+
+    <dt>Turnus</dt>
+    <dd>{{ offer.paymentInterval }}</dd>
+
+    <dt>Beitrag</dt>
+    <dd>{{ offer.formattedFee }}</dd>
+  </dl>
+</div>
+

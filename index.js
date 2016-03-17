@@ -41,9 +41,11 @@ app.use('/assets', express.static('public'))
 app.get('/', searchController.get)
 app.get('/result', resultController.get)
 app.get('/partners/:id', partnersController.get)
-app.get('/partners/:id/offers', offersController.get)
-app.get('/partners/:id/proposals', proposalsController.get)
-app.get('/partners/:id/contracts', contractsController.get)
+app.get('/partners/:id/offers', offersController.index)
+app.get('/partners/:id/offers/:offer_id', offersController.show)
+app.get('/partners/:id/proposals', proposalsController.index)
+app.get('/partners/:id/contracts', contractsController.index)
+app.get('/partners/:id/contracts/:contract_id', contractsController.show)
 
 module.exports = app
 
