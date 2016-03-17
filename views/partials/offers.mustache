@@ -13,12 +13,15 @@
         <th class="sort" data-sort="col-portfolio-expiry">Ablauf</th>
         <th class="sort" data-sort="col-portfolio-payment-interval">Turnus</th>
         <th class="sort text-right" data-sort="col-portfolio-payment-amount">Beitrag</th>
+        <th>Aktion</th>
       </tr>
     </thead>
     <tbody>
       {{# offers }}
       <tr>
-        <td class="col-portfolio-id">{{ id }}</td>
+        <td class="col-portfolio-id">
+          <a href="{{ offerUri }}">{{ id }}</a>
+        </td>
         <td class="col-portfolio-status">
           <i title="" data-original-title="" class="icon-circle-line active" data-toggle="popover" data-content="Storniert" data-placement="top"></i>
           <!-- <span class="col&#45;portfolio&#45;status&#45;label">Storniert</span> -->
@@ -37,6 +40,9 @@
           <span>{{ paymentInterval }}</span>
         </td>
         <td class="col-portfolio-payment-amount text-right">{{ formattedFee }}</td>
+        <td>
+          <a href="{{ offerUri }}" class="btn btn-default btn-xs">Öffnen</a>
+        </td>
       </tr>
       {{/ offers }}
     </tbody>
