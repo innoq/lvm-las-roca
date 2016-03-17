@@ -59,7 +59,9 @@
 * 15.03. (Lucas: 4h, Marc: 8h)
   * Anpassungen aufgrund von API Änderungen
   * Backend-Integration Postbox
-* 16.03. (Lucas: 8h, Marc: )
+* 16.03. (Lucas: 8h, Marc: 8h)
   * Meeting wegen API
   * Umsetzung der API
-  * Anpassung an die API
+  * LVM-LAS-ROCA Anpassung an die API
+  * LVM-LAS-POSTBOX Anpassung an die API
+  * Vertragsansicht, PE Sparten-Produktübersicht
