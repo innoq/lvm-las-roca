@@ -65,3 +65,8 @@
   * LVM-LAS-ROCA Anpassung an die API
   * LVM-LAS-POSTBOX Anpassung an die API
   * Vertragsansicht, PE Sparten-Produktübersicht
+* 17.03. (Lucas: 0h, Marc: )
+  * 
+* 18.03. (Lucas: 8h, Marc: )
+  * Tests
+  * Briefvorlagen
