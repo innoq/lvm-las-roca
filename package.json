@@ -32,7 +32,8 @@
     "npm": "^3.7.3",
     "passport": "^0.3.2",
     "passport-http": "^0.3.0",
-    "simplete": "innoq/simplete#response_result_filter"
+    "simplete": "innoq/simplete#response_result_filter",
+    "jquery-pjax": "defunkt/jquery-pjax"
   },
   "devDependencies": {
     "babel-core": "^6.5.2",

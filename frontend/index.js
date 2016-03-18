@@ -4,6 +4,7 @@ import simplete from 'simplete'
 import moment from 'moment'
 
 require('./postbox')
+require('./pjax')
 
 console.log('Welcome')
 
