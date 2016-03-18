@@ -12,7 +12,7 @@
       {{# contracts }}
       <tr>
         <td class="col-portfolio-id">
-          <a href="{{ contractUri }}">{{ id }}</a>
+          <a href="{{ contractUri }}" data-pjax="active">{{ id }}</a>
         </td>
         <td class="col-portfolio-branch">
           <i class="{{ icon }}"></i>
@@ -20,7 +20,7 @@
         </td>
         <td class="col-portfolio-payment-amount text-right">{{ formattedFee }}</td>
         <td>
-          <a href="{{ contractUri }}" class="btn btn-default btn-xs">Öffnen</a>
+          <a href="{{ contractUri }}" class="btn btn-default btn-xs" data-pjax="active">Öffnen</a>
         </td>
       </tr>
       {{/ contracts }}

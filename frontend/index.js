@@ -4,10 +4,11 @@ import simplete from 'simplete'
 import moment from 'moment'
 
 require('./postbox')
+require('./pjax')
 
 console.log('Welcome')
 
-$(() => {
+$(document).on('ready pjax:success', () => {
   // init Simplete autocompletion
   $('[data-complete=auto]').each((_i, field) => {
     const resultsClass = $(field).data('complete-results')
