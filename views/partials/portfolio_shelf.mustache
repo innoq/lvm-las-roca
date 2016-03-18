@@ -1,16 +1,16 @@
 <ul class="customer-card-portfolio">
   <li class="customer-card-portfolio-item">
-    <a href="{{ partner._links.offers.href }}" class="customer-card-portfolio-item-link">
+    <a href="{{ partner._links.offers.href }}" class="customer-card-portfolio-item-link" data-pjax="active">
       Angebote <span class="customer-card-portfolio-item-quantity">({{ offers.length }})</span>
     </a>
   </li>
   <li class="customer-card-portfolio-item">
-    <a href="{{ partner._links.proposals.href }}" class="customer-card-portfolio-item-link">
+    <a href="{{ partner._links.proposals.href }}" class="customer-card-portfolio-item-link" data-pjax="active">
       Anträge <span class="customer-card-portfolio-item-quantity">({{ proposals.length }})</span>
     </a>
   </li>
   <li class="customer-card-portfolio-item">
-    <a href="{{ partner._links.contracts.href }}" class="customer-card-portfolio-item-link">
+    <a href="{{ partner._links.contracts.href }}" class="customer-card-portfolio-item-link" data-pjax="active">
       Verträge <span class="customer-card-portfolio-item-quantity">({{ contracts.length }})</span>
     </a>
   </li>
