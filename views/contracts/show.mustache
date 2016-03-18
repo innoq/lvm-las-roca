@@ -38,7 +38,7 @@
       <div class="contract-details">
 
         <ul class="nav nav-tabs scene-contents" role="tablist">
-          <li class="active"><a href="#kfz-fahrzeugdaten" class="kbd" role="tab" data-toggle="tab">Fahrzeugdaten</a></li>
+          <li><a href="#kfz-fahrzeugdaten" class="kbd" role="tab" data-toggle="tab">Fahrzeugdaten</a></li>
           <li><a href="#kfz-nutzung" class="kbd" role="tab" data-toggle="tab">Nutzung</a></li>
           <li><a href="#kfz-versSchutz" class="kbd" role="tab" data-toggle="tab">Versicherungsschutz</a></li>
         </ul>
@@ -154,7 +154,68 @@
           </div>
 
           <div id="kfz-nutzung" class="tab-pane">
-            <p class="scene-form">Noch nicht implementiert.</p>
+
+            <form class="form-horizontal scene-form" role="form">
+              <fieldset class="scene-fieldset">
+                <div class="form-group">
+                  <label for="kfz-beliebigeFahrer" class="control-label">beliebige Fahrer</label>
+                  <div class="fields">
+                    <input type="text" id="kfz-beliebigeFahrer" class="form-control" value="{{ contract.nutzung.beliebigeFahrer }}" disabled>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="kfz-nachtAbstellplatz" class="control-label">nächtlicher Abstellplatz</label>
+                  <div class="fields">
+                    <input type="text" id="kfz-nachtAbstellplatz" class="form-control" value="{{ contract.nutzung.nachtAbstellplatz }}" disabled>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="kfz-fahrleistungKm" class="control-label">Fahrleistung (jährl./Saison)</label>
+                  <div class="fields">
+                    <input type="text" id="kfz-fahrleistungKm" class="form-control" value="{{ contract.nutzung.fahrleistungKm }}" disabled>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="kfz-kilometerstand" class="control-label">Kilometerstand</label>
+                  <div class="fields">
+                    <input type="text" id="kfz-kilometerstand" class="form-control" value="{{ contract.nutzung.kilometerstand }}" disabled>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="kfz-abweichenderFahrzeughalter" class="control-label">abweichender Fahrzeughalter</label>
+                  <div class="fields">
+                    <input type="text" id="kfz-abweichenderFahrzeughalter" class="form-control" value="{{ contract.nutzung.abweichenderFahrzeughalter }}" disabled>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="scene-fieldset">
+                <div class="form-group">
+                  <label for="kfz-nutzung" class="control-label">Fahrzeugnutzung</label>
+                  <div class="fields">
+                    <input type="text" id="kfz-nutzung" class="form-control" value="{{ contract.nutzung.nutzung }}" disabled>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="kfz-selbstGenEigentum" class="control-label">selbstgen. Wohneigentum</label>
+                  <div class="fields">
+                    <input type="text" id="kfz-selbstGenEigentum" class="form-control" value="{{ contract.nutzung.selbstGenEigentum }}" disabled>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="kfz-wohneigentumart" class="control-label">Wohneigentumsart</label>
+                  <div class="fields">
+                    <input type="text" id="kfz-wohneigentumart" class="form-control" value="{{ contract.nutzung.wohneigentumart }}" disabled>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
           </div>
           <div id="kfz-versSchutz" class="tab-pane">
             <p class="scene-form">Noch nicht implementiert.</p>
