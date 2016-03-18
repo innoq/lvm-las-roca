@@ -3,7 +3,7 @@
         <article data-accordion="active" class="customer-card h-card accordion">
             <div class="accordion-title">
                 <div class="customer-card-name">
-                    <a href="{{ partner._links.self.href }}" class="customer-card-name-link">
+                    <a href="{{ partner._links.self.href }}" class="customer-card-name-link" data-pjax="active">
                         <span class="p-name">{{ partner.honorific }} {{ partner.firstName }} {{ partner.name }}</span>
                     </a>
                     <span class="customer-card-flags">
