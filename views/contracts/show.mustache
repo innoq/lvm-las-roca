@@ -1,17 +1,183 @@
-<div class="container">
-  <header class="listing-header">
-    <h2>Verträge {{ proposal.id }}</h2>
-  </header>
+<div class="container container-main-content scene">
 
-  <dl class="dl-horizontal">
-    <dt>#</dt>
-    <dd>{{ contract.id }}</dd>
+  <div class="row">
+    <header class="scene-header page-header">
+      <h1 class="scene-header-headline">{{ contract.branch }} <small>Vertrag {{ contract.id }}</small></h1>
+      <small>
+        letzte Änderung: <time datetime="2014-07-15 09:36">vor 3 Tagen</time>
+        (<a href="#" class="h-card">01 Gosen</a>)
+      </small>
+    </header>
+    <form class="form-horizontal" role="form" action="index.html" method="get">
+      <div class="scene-agents">
+        <div class="form-group">
+          <label for="agent-original" class="control-label">Bestand</label>
+          <div class="fields">
+            <select id="agent-original" class="form-control">
+              <option>00 Thomas Gosen</option>
+              <option>01 &hellip;</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="agent-current" class="control-label">Abschluss</label>
+          <div class="fields">
+            <select id="agent-current" class="form-control">
+              <option>00 Thomas Gosen</option>
+              <option>01 &hellip;</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
 
-    <dt>Sparte</dt>
-    <dd>{{ contract.branch }}</dd>
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="nav nav-tabs scene-contents" role="tablist">
+        <li class="active"><a href="#kfz-fahrzeugdaten" class="kbd" role="tab" data-toggle="tab">Fahrzeugdaten</a></li>
+        <li><a href="#kfz-nutzung" class="kbd" role="tab" data-toggle="tab">Nutzung</a></li>
+        <li><a href="#kfz-extra" class="kbd" role="tab" data-toggle="tab">Extra</a></li>
+        <li><a href="#kfz-doku" class="kbd" role="tab" data-toggle="tab">Dokumentation</a></li>
+      </ul>
+    </div>
+  </div>
 
-    <dt>Beitrag</dt>
-    <dd>{{ contract.formattedFee }}</dd>
-  </dl>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="tab-content">
+        <div id="kfz-fahrzeugdaten" class="tab-pane active">
+          <p class="scene-form">Noch nicht implementiert.</p>
+        </div>
+        <div id="kfz-nutzung" class="tab-pane">
+          <p class="scene-form">Noch nicht implementiert.</p>
+        </div>
+        <div id="kfz-extra" class="tab-pane">
+          <p class="scene-form">Noch nicht implementiert.</p>
+        </div>
+        <div id="kfz-doku" class="tab-pane">
+          <p class="scene-form">Noch nicht implementiert.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary">Berechnen</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <ul class="scene-summary">
+        <li>
+          <table class="table">
+            <tr>
+              <th>PKW</th>
+              <td></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Normaltarif</th>
+              <td></td>
+            </tr>
+          </table>
+        </li>
+        <li>
+          <table class="table">
+            <tr>
+              <th></th>
+              <th>Regiokl.</th>
+              <th>Typkl.</th>
+            </tr>
+            <tr>
+              <th>Haftpflicht</th>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Vollkasko</th>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Teilkasko</th>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td></td>
+              <td></td>
+            </tr>
+          </table>
+        </li>
+        <li>
+          <table class="table">
+            <tr>
+              <th>zu zahlender Betrag</th>
+              <th></th>
+            </tr>
+            <tr>
+              <th></th>
+              <td></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td></td>
+            </tr>
+            <tr>
+              <th>Schlüssel</th>
+              <td></td>
+            </tr>
+          </table>
+        </li>
+        <li>
+          <table class="table">
+            <tr>
+              <th>enthaltene Versicherungssteuer</th>
+              <th></th>
+            </tr>
+            <tr>
+              <th></th>
+              <td></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td></td>
+            </tr>
+            <tr>
+              <th></th>
+              <td></td>
+            </tr>
+          </table>
+        </li>
+      </ul>
+    </div>
+  </div>
+
 </div>
-
