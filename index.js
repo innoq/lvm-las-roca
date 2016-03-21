@@ -46,12 +46,12 @@ app.get('/result', resultController.get)
 app.get('/partners/:id', partnersController.get)
 app.get('/partners/:id/branches/:branch', branchesController.show)
 app.get('/partners/:id/offers', offersController.index)
+app.get('/partners/:id/offers/new', offersController.new)
 app.get('/partners/:id/offers/:offer_id', offersController.show)
+app.get('/partners/:id/offers/:offer_id/edit', offersController.edit)
 app.get('/partners/:id/proposals', proposalsController.index)
 app.get('/partners/:id/contracts', contractsController.index)
-app.get('/partners/:id/contracts/new', contractsController.new)
 app.get('/partners/:id/contracts/:contract_id', contractsController.show)
-app.get('/partners/:id/contracts/:contract_id/edit', contractsController.edit)
 
 module.exports = app
 

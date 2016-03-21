@@ -1,19 +1,14 @@
 <div class="container container-main-content scene">
-  {{# success }}
-  <div class="alert alert-success fade in" role="alert">
-    Der Schaden wurde erfolgreich gemeldet
-  </div>
-  {{/ success }}
 
   <div class="row">
     <header class="scene-header page-header">
-      <h1 class="scene-header-headline">{{ contract.branch }} <small>Vertrag {{ contract.id }}</small></h1>
+      <h1 class="scene-header-headline">{{ offer.branch }} <small>Angebot bearbeiten {{ offer.id }}</small></h1>
       <small>
         letzte Änderung: <time datetime="2014-07-15 09:36">vor 3 Tagen</time>
         (<a href="#" class="h-card">01 Gosen</a>)
       </small>
     </header>
-    <form class="form-horizontal" role="form" action="index.html" method="get">
+    <form class="form-horizontal" role="form" action="index.html">
       <div class="scene-agents">
         <div class="form-group">
           <label for="agent-original" class="control-label">Bestand</label>
@@ -40,7 +35,7 @@
   <div class="row">
     <div class="col-md-12">
 
-      <div class="contract-details">
+      <div class="offer-details">
 
         <ul class="nav nav-tabs scene-contents" role="tablist">
           <li><a href="#kfz-fahrzeugdaten" class="kbd" role="tab" data-toggle="tab">Fahrzeugdaten</a></li>
@@ -56,21 +51,24 @@
                 <div class="form-group">
                   <label for="kfz-fahrzeugart" class="control-label">Fahrzeugart</label>
                   <div class="fields">
-                    <input type="text" id="kfz-fahrzeugart" class="form-control" value="{{ contract.fahrzeugdaten.fahrzeugart }}" disabled>
+                    <select id="kfz-fahrzeugart" class="form-control">
+                      <option>{{ offer.fahrzeugdaten.fahrzeugart }}</option>
+                      <option>…</option>
+                    </select>
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="kfz-kennzeichen" class="control-label">Kennzeichen</label>
                   <div class="fields form-inline">
-                    <input type="text" id="kfz-kennzeichen" class="form-control" value="{{ contract.fahrzeugdaten.kennzeichen }}" disabled>
+                    <input type="text" id="kfz-kennzeichen" class="form-control" value="{{ offer.fahrzeugdaten.kennzeichen }}">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="kfz-plz" class="control-label"><abbr title="Postleitzahl">PLZ</abbr> / Ort</label>
                   <div class="fields">
-                    <input type="text" id="kfz-plz" class="form-control" disabled>
+                    <input type="text" id="kfz-plz" class="form-control">
                   </div>
                 </div>
 
@@ -78,7 +76,7 @@
                   <label for="kfz-herstellernr" class="control-label">Hersteller-Nr.</label>
                   <div class="fields form-inline">
                     <div class="input-group">
-                      <input type="search" id="kfz-herstellernr" class="form-control" value="{{ contract.fahrzeugdaten.hsn }}" disabled>
+                      <input type="search" id="kfz-herstellernr" class="form-control" value="{{ offer.fahrzeugdaten.hsn }}">
                     </div>
                   </div>
                 </div>
@@ -86,28 +84,28 @@
                 <div class="form-group">
                   <label for="kfz-typschluesselnr" class="control-label">Typschlüssel-Nr. <a class="control-label-help-link" data-toggle="modal" data-target=".modal-help-example" href="#"><i class="icon-question"></i></a></label>
                   <div class="fields">
-                    <input type="search" id="kfz-typschluesselnr" class="form-control" value="{{ contract.fahrzeugdaten.typschl }}" disabled>
+                    <input type="search" id="kfz-typschluesselnr" class="form-control" value="{{ offer.fahrzeugdaten.typschl }}">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="kfz-erstzulassung" class="control-label">Erstzulassung</label>
                   <div class="fields">
-                    <input type="month" id="kfz-erstzulassung" class="form-control" value="{{ contract.fahrzeugdaten.erstzulassung }}" disabled>
+                    <input type="month" id="kfz-erstzulassung" class="form-control" value="{{ offer.fahrzeugdaten.erstzulassung }}">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="kfz-erwerb" class="control-label">Erwerb <abbr>VN</abbr> / <abbr>FH</abbr></label>
                   <div class="fields">
-                    <input type="month" id="kfz-erwerb" class="form-control" disabled>
+                    <input type="month" id="kfz-erwerb" class="form-control">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="kfz-fahrgestell" class="control-label">Fahrgestell-Nr.</label>
                   <div class="fields">
-                    <input type="text" id="kfz-fahrgestell" class="form-control" value="{{ contract.fahrzeugdaten.fahrgestell }}" disabled>
+                    <input type="text" id="kfz-fahrgestell" class="form-control" value="{{ offer.fahrzeugdaten.fahrgestell }}">
                   </div>
                 </div>
               </fieldset>
@@ -116,41 +114,58 @@
                 <div class="form-group form-group-multiple">
                   <label for="kfz-saison-von" class="control-label">Saison von</label>
                   <div class="col-sm-3 form-group-multiple-item">
-                    <input type="month" id="kfz-saison-von" class="form-control" disabled>
+                    <input type="month" id="kfz-saison-von" class="form-control">
                   </div>
                   <label for="kfz-saison-bis" class="control-label">Saison bis</label>
                   <div class="col-sm-3 form-group-multiple-item">
-                    <input type="month" id="kfz-saison-bis" class="form-control" disabled>
+                    <input type="month" id="kfz-saison-bis" class="form-control">
                   </div>
                 </div>
 
                 <div class="form-group form-group-multiple">
                   <label for="kfz-kennzeichen-art" class="control-label">KFZ-Kennzeichen-Art</label>
                   <div class="col-sm-3 form-group-multiple-item">
-                    <input type="text" id="kfz-kennzeichen-art" class="form-control" value="{{ contract.fahrzeugdaten.kennzeichenart }}" disabled>
+                    <select id="kfz-fahrzeugart" class="form-control">
+                      <option>{{ offer.fahrzeugdaten.kennzeichenart }}</option>
+                      <option>…</option>
+                    </select>
                   </div>
 
                   <label for="kfz-wechselkennzeichen" class="control-label">Wechselkennzeichen</label>
                   <div class="col-sm-3 form-group-multiple-item">
-                    <input type="text" id="kfz-wechselkennzeichen" class="form-control" value="{{ contract.fahrzeugdaten.wechselkennzeichen }}" disabled>
+                    <label class="radio-inline">
+                      <input name="kfz-wechselkennzeichen" value="nein" checked="" type="radio">
+                      nein
+                    </label>
+                    <label class="radio-inline">
+                      <input name="kfz-wechselkennzeichen" value="ja" type="radio">
+                      ja
+                    </label>
                   </div>
                 </div>
 
                 <div class="form-group form-group-multiple">
                   <label for="kfz-leistung-kw" class="control-label">Leistung (kW)</label>
                   <div class="col-sm-3 form-group-multiple-item">
-                    <input type="text" id="kfz-leistung-kw" class="form-control" disabled>
+                    <input type="text" id="kfz-leistung-kw" class="form-control">
                   </div>
                   <label for="kfz-leistung-ps" class="control-label">Leistung (PS)</label>
                   <div class="col-sm-3 form-group-multiple-item">
-                    <input type="text" id="kfz-leistung-ps" class="form-control" value="{{ contract.fahrzeugdaten.fahrzeugstaerkePS }}" disabled>
+                    <input type="text" id="kfz-leistung-ps" class="form-control" value="{{ offer.fahrzeugdaten.fahrzeugstaerkePS }}">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="kfz-austauschmotor" class="control-label">Austauschmotor</label>
                   <div class="col-sm-3 form-group-multiple-item">
-                    <input type="text" id="kfz-austauschmotor" class="form-control" value="{{ contract.fahrzeugdaten.austauschmotor }}" disabled>
+                    <label class="radio-inline">
+                      <input name="kfz-austauschmotor" value="nein" checked="" type="radio">
+                      nein
+                    </label>
+                    <label class="radio-inline">
+                      <input name="kfz-austauschmotor" value="ja" type="radio">
+                      ja
+                    </label>
                   </div>
                 </div>
 
@@ -164,28 +179,35 @@
                 <div class="form-group">
                   <label for="kfz-beliebigeFahrer" class="control-label">beliebige Fahrer</label>
                   <div class="fields">
-                    <input type="text" id="kfz-beliebigeFahrer" class="form-control" value="{{ contract.nutzung.beliebigeFahrer }}" disabled>
+                    <input type="text" id="kfz-beliebigeFahrer" class="form-control" value="{{ offer.nutzung.beliebigeFahrer }}">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="kfz-abweichenderFahrzeughalter" class="control-label">abweichender Fahrzeughalter</label>
-                  <div class="fields">
-                    <input type="text" id="kfz-abweichenderFahrzeughalter" class="form-control" value="{{ contract.nutzung.abweichenderFahrzeughalter }}" disabled>
+                  <div class="col-sm-3 form-group-multiple-item">
+                    <label class="radio-inline">
+                      <input name="kfz-abweichenderFahrzeughalter" value="nein" checked="" type="radio">
+                      nein
+                    </label>
+                    <label class="radio-inline">
+                      <input name="kfz-abweichenderFahrzeughalter" value="ja" type="radio">
+                      ja
+                    </label>
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="kfz-fahrleistungKm" class="control-label">Fahrleistung (jährl./Saison)</label>
                   <div class="fields">
-                    <input type="text" id="kfz-fahrleistungKm" class="form-control" value="{{ contract.nutzung.fahrleistungKm }}" disabled>
+                    <input type="text" id="kfz-fahrleistungKm" class="form-control" value="{{ offer.nutzung.fahrleistungKm }}">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="kfz-kilometerstand" class="control-label">Kilometerstand</label>
                   <div class="fields">
-                    <input type="text" id="kfz-kilometerstand" class="form-control" value="{{ contract.nutzung.kilometerstand }}" disabled>
+                    <input type="text" id="kfz-kilometerstand" class="form-control" value="{{ offer.nutzung.kilometerstand }}">
                   </div>
                 </div>
               </fieldset>
@@ -194,28 +216,35 @@
                 <div class="form-group">
                   <label for="kfz-nutzung" class="control-label">Fahrzeugnutzung</label>
                   <div class="fields">
-                    <input type="text" id="kfz-nutzung" class="form-control" value="{{ contract.nutzung.nutzung }}" disabled>
+                    <input type="text" id="kfz-nutzung" class="form-control" value="{{ offer.nutzung.nutzung }}">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="kfz-selbstGenEigentum" class="control-label">selbstgen. Wohneigentum</label>
-                  <div class="fields">
-                    <input type="text" id="kfz-selbstGenEigentum" class="form-control" value="{{ contract.nutzung.selbstGenEigentum }}" disabled>
+                  <div class="col-sm-3 form-group-multiple-item">
+                    <label class="radio-inline">
+                      <input name="kfz-selbstGenEigentum" value="nein" checked="" type="radio">
+                      nein
+                    </label>
+                    <label class="radio-inline">
+                      <input name="kfz-selbstGenEigentum" value="ja" type="radio">
+                      ja
+                    </label>
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="kfz-wohneigentumart" class="control-label">Wohneigentumsart</label>
                   <div class="fields">
-                    <input type="text" id="kfz-wohneigentumart" class="form-control" value="{{ contract.nutzung.wohneigentumart }}" disabled>
+                    <input type="text" id="kfz-wohneigentumart" class="form-control" value="{{ offer.nutzung.wohneigentumart }}">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="kfz-nachtAbstellplatz" class="control-label">nächtlicher Abstellplatz</label>
                   <div class="fields">
-                    <input type="text" id="kfz-nachtAbstellplatz" class="form-control" value="{{ contract.nutzung.nachtAbstellplatz }}" disabled>
+                    <input type="text" id="kfz-nachtAbstellplatz" class="form-control" value="{{ offer.nutzung.nachtAbstellplatz }}">
                   </div>
                 </div>
               </fieldset>
@@ -228,28 +257,28 @@
                 <div class="form-group">
                   <label for="kfz-rahmenvertrag" class="control-label">Rahmenvertrag</label>
                   <div class="fields">
-                    <input type="text" id="kfz-rahmenvertrag" class="form-control" value="{{ contract.versSchutz.rahmenvertrag }}" disabled>
+                    <input type="text" id="kfz-rahmenvertrag" class="form-control" value="{{ offer.versSchutz.rahmenvertrag }}">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="kfz-tarifgruppe" class="control-label">Tarifgruppe</label>
                   <div class="fields">
-                    <input type="text" id="kfz-tarifgruppe" class="form-control" value="{{ contract.versSchutz.tarifgruppe }}" disabled>
+                    <input type="text" id="kfz-tarifgruppe" class="form-control" value="{{ offer.versSchutz.tarifgruppe }}">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="kfz-versBeginn" class="control-label">Versicherungsbeginn</label>
                   <div class="fields">
-                    <input type="text" id="kfz-versBeginn" class="form-control" value="{{ contract.versSchutz.versBeginn }}" disabled>
+                    <input type="text" id="kfz-versBeginn" class="form-control" value="{{ offer.versSchutz.versBeginn }}">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="kfz-zahlungsweise" class="control-label">Zahlungsweise</label>
                   <div class="fields">
-                    <input type="text" id="kfz-zahlungsweise" class="form-control" value="{{ contract.versSchutz.zahlungsweise }}" disabled>
+                    <input type="text" id="kfz-zahlungsweise" class="form-control" value="{{ offer.versSchutz.zahlungsweise }}">
                   </div>
                 </div>
               </fieldset>
@@ -258,14 +287,14 @@
                 <div class="form-group">
                   <label for="kfz-harfpflichtSFR" class="control-label">Haftpflicht Schadensfreiheitrabatt</label>
                   <div class="fields">
-                    <input type="text" id="kfz-harfpflichtSFR" class="form-control" value="{{ contract.versSchutz.haftpflichSFR }}" disabled>
+                    <input type="text" id="kfz-harfpflichtSFR" class="form-control" value="{{ offer.versSchutz.haftpflichSFR }}">
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label for="kfz-volkaskoSFR" class="control-label">Vollkasko-Schadensfreiheitrabatt</label>
                   <div class="fields">
-                    <input type="text" id="kfz-volkaskoSFR" class="form-control" value="{{ contract.versSchutz.volkaskoSFR }}" disabled>
+                    <input type="text" id="kfz-volkaskoSFR" class="form-control" value="{{ offer.versSchutz.volkaskoSFR }}">
                   </div>
               </fieldset>
             </form>
@@ -283,14 +312,6 @@
     <div class="col-md-12">
       <div class="btn-group">
         <button type="button" class="btn btn-primary">Berechnen</button>
-      </div>
-
-      <div class="btn-group">
-        <a href="{{ letter_url }}/template?contractId={{ contractId }}&partnerId={{ partnerId }}" class="btn btn-default">Brief schreiben</a>
-      </div>
-
-      <div class="btn-group">
-        <a href="{{ damage_url }}/damage/new?branch=kraftfahrt&contractId={{ contractId }}&partnerId={{ partnerId }}" class="btn btn-default">Schaden melden</a>
       </div>
     </div>
   </div>
