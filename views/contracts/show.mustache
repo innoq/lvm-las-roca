@@ -164,9 +164,9 @@
                 </div>
 
                 <div class="form-group">
-                  <label for="kfz-nachtAbstellplatz" class="control-label">nächtlicher Abstellplatz</label>
+                  <label for="kfz-abweichenderFahrzeughalter" class="control-label">abweichender Fahrzeughalter</label>
                   <div class="fields">
-                    <input type="text" id="kfz-nachtAbstellplatz" class="form-control" value="{{ contract.nutzung.nachtAbstellplatz }}" disabled>
+                    <input type="text" id="kfz-abweichenderFahrzeughalter" class="form-control" value="{{ contract.nutzung.abweichenderFahrzeughalter }}" disabled>
                   </div>
                 </div>
 
@@ -181,13 +181,6 @@
                   <label for="kfz-kilometerstand" class="control-label">Kilometerstand</label>
                   <div class="fields">
                     <input type="text" id="kfz-kilometerstand" class="form-control" value="{{ contract.nutzung.kilometerstand }}" disabled>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="kfz-abweichenderFahrzeughalter" class="control-label">abweichender Fahrzeughalter</label>
-                  <div class="fields">
-                    <input type="text" id="kfz-abweichenderFahrzeughalter" class="form-control" value="{{ contract.nutzung.abweichenderFahrzeughalter }}" disabled>
                   </div>
                 </div>
               </fieldset>
@@ -211,6 +204,13 @@
                   <label for="kfz-wohneigentumart" class="control-label">Wohneigentumsart</label>
                   <div class="fields">
                     <input type="text" id="kfz-wohneigentumart" class="form-control" value="{{ contract.nutzung.wohneigentumart }}" disabled>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="kfz-nachtAbstellplatz" class="control-label">nächtlicher Abstellplatz</label>
+                  <div class="fields">
+                    <input type="text" id="kfz-nachtAbstellplatz" class="form-control" value="{{ contract.nutzung.nachtAbstellplatz }}" disabled>
                   </div>
                 </div>
               </fieldset>
