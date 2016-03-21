@@ -30,6 +30,7 @@ if (inProduction) {
 }
 
 app.locals.postbox_url = process.env.POSTBOX_URL || 'http://localhost:9000'
+app.locals.letter_url = process.env.LETTER_URL || 'http://localhost:9100'
 
 app.use(require('./lib/render_without_layout'))
 
