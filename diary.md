@@ -72,3 +72,9 @@
   * Briefvorlagen
   * Vertragsdetails
   * PJax-Support
+
+### Zwischenstand:
+
+* Lucas: 113h
+* Marc: 96h
+* Insgesamt 209h von 320h
