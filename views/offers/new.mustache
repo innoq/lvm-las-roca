@@ -274,7 +274,11 @@
                 <div class="form-group">
                   <label for="kfz-zahlungsweise" class="control-label">Zahlungsweise</label>
                   <div class="fields">
-                    <input type="text" id="kfz-zahlungsweise" class="form-control" value="{{ contract.versSchutz.zahlungsweise }}">
+                    <select id="kfz-zahlungsweise" class="form-control">
+                    {{# offer.versSchutz.verfuegbareZahlungsweisen }}
+                      <option id="{{ id }}" value="{{ name }}">{{ name }}</option>
+                    {{/ offer.versSchutz.verfuegbareZahlungsweisen }}
+                    </select>
                   </div>
                 </div>
               </fieldset>
