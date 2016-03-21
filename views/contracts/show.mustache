@@ -154,7 +154,6 @@
           </div>
 
           <div id="kfz-nutzung" class="tab-pane">
-
             <form class="form-horizontal scene-form" role="form">
               <fieldset class="scene-fieldset">
                 <div class="form-group">
@@ -217,8 +216,55 @@
               </fieldset>
             </form>
           </div>
+
           <div id="kfz-versSchutz" class="tab-pane">
-            <p class="scene-form">Noch nicht implementiert.</p>
+            <form class="form-horizontal scene-form" role="form">
+              <fieldset class="scene-fieldset">
+                <div class="form-group">
+                  <label for="kfz-rahmenvertrag" class="control-label">Rahmenvertrag</label>
+                  <div class="fields">
+                    <input type="text" id="kfz-rahmenvertrag" class="form-control" value="{{ contract.versSchutz.rahmenvertrag }}" disabled>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="kfz-tarifgruppe" class="control-label">Tarifgruppe</label>
+                  <div class="fields">
+                    <input type="text" id="kfz-tarifgruppe" class="form-control" value="{{ contract.versSchutz.tarifgruppe }}" disabled>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="kfz-versBeginn" class="control-label">Versicherungsbeginn</label>
+                  <div class="fields">
+                    <input type="text" id="kfz-versBeginn" class="form-control" value="{{ contract.versSchutz.versBeginn }}" disabled>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="kfz-zahlungsweise" class="control-label">Zahlungsweise</label>
+                  <div class="fields">
+                    <input type="text" id="kfz-zahlungsweise" class="form-control" value="{{ contract.versSchutz.zahlungsweise }}" disabled>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset class="scene-fieldset">
+                <div class="form-group">
+                  <label for="kfz-harfpflichtSFR" class="control-label">Haftpflicht Schadensfreiheitrabatt</label>
+                  <div class="fields">
+                    <input type="text" id="kfz-harfpflichtSFR" class="form-control" value="{{ contract.versSchutz.haftpflichSFR }}" disabled>
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="kfz-volkaskoSFR" class="control-label">Vollkasko-Schadensfreiheitrabatt</label>
+                  <div class="fields">
+                    <input type="text" id="kfz-volkaskoSFR" class="form-control" value="{{ contract.versSchutz.volkaskoSFR }}" disabled>
+                  </div>
+              </fieldset>
+            </form>
+
           </div>
         </div>
       </div>
