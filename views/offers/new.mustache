@@ -29,20 +29,20 @@
   </div>
 
   <div class="row">
-    <div class="col-md-12">
+    <form class="form-horizontal scene-form" role="form" action="{{ partner._links.offers.href }}" method="post">
+      <div class="col-md-12">
 
-      <div class="contract-details">
+        <div class="contract-details">
 
-        <ul class="nav nav-tabs scene-contents" role="tablist">
-          <li><a href="#kfz-fahrzeugdaten" class="kbd" role="tab" data-toggle="tab">Fahrzeugdaten</a></li>
-          <li><a href="#kfz-nutzung" class="kbd" role="tab" data-toggle="tab">Nutzung</a></li>
-          <li><a href="#kfz-versSchutz" class="kbd" role="tab" data-toggle="tab">Versicherungsschutz</a></li>
-        </ul>
+          <ul class="nav nav-tabs scene-contents" role="tablist">
+            <li><a href="#kfz-fahrzeugdaten" class="kbd" role="tab" data-toggle="tab">Fahrzeugdaten</a></li>
+            <li><a href="#kfz-nutzung" class="kbd" role="tab" data-toggle="tab">Nutzung</a></li>
+            <li><a href="#kfz-versSchutz" class="kbd" role="tab" data-toggle="tab">Versicherungsschutz</a></li>
+          </ul>
 
-        <div>
-          <div id="kfz-fahrzeugdaten" class="tab-pane">
+          <div>
+            <div id="kfz-fahrzeugdaten" class="tab-pane">
 
-            <form class="form-horizontal scene-form" role="form">
               <fieldset class="scene-fieldset">
                 <div class="form-group">
                   <label for="kfz-fahrzeugart" class="control-label">Fahrzeugart</label>
@@ -166,11 +166,9 @@
                 </div>
 
               </fieldset>
-            </form>
-          </div>
+            </div>
 
-          <div id="kfz-nutzung" class="tab-pane">
-            <form class="form-horizontal scene-form" role="form">
+            <div id="kfz-nutzung" class="tab-pane">
               <fieldset class="scene-fieldset">
                 <div class="form-group">
                   <label for="kfz-beliebigeFahrer" class="control-label">beliebige Fahrer</label>
@@ -244,11 +242,9 @@
                   </div>
                 </div>
               </fieldset>
-            </form>
-          </div>
+            </div>
 
-          <div id="kfz-versSchutz" class="tab-pane">
-            <form class="form-horizontal scene-form" role="form">
+            <div id="kfz-versSchutz" class="tab-pane">
               <fieldset class="scene-fieldset">
                 <div class="form-group">
                   <label for="kfz-rahmenvertrag" class="control-label">Rahmenvertrag</label>
@@ -275,9 +271,9 @@
                   <label for="kfz-zahlungsweise" class="control-label">Zahlungsweise</label>
                   <div class="fields">
                     <select id="kfz-zahlungsweise" class="form-control">
-                    {{# offer.versSchutz.verfuegbareZahlungsweisen }}
+                      {{# offer.versSchutz.verfuegbareZahlungsweisen }}
                       <option id="{{ id }}" value="{{ name }}">{{ name }}</option>
-                    {{/ offer.versSchutz.verfuegbareZahlungsweisen }}
+                      {{/ offer.versSchutz.verfuegbareZahlungsweisen }}
                     </select>
                   </div>
                 </div>
@@ -297,131 +293,131 @@
                     <input type="text" id="kfz-volkaskoSFR" class="form-control" value="{{ contract.versSchutz.volkaskoSFR }}">
                   </div>
               </fieldset>
-            </form>
 
+                </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+        <div class="col-md-12">
+          <div class="btn-group">
+            <button type="submit" class="btn btn-primary">Berechnen</button>
           </div>
         </div>
       </div>
 
-    </div>
-  </div>
-
-  <hr>
-
-  <div class="row">
-    <div class="col-md-12">
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary">Berechnen</button>
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="scene-summary">
+            <li>
+              <table class="table">
+                <tr>
+                  <th>PKW</th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Normaltarif</th>
+                  <td></td>
+                </tr>
+              </table>
+            </li>
+            <li>
+              <table class="table">
+                <tr>
+                  <th></th>
+                  <th>Regiokl.</th>
+                  <th>Typkl.</th>
+                </tr>
+                <tr>
+                  <th>Haftpflicht</th>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Vollkasko</th>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Teilkasko</th>
+                  <td></td>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td></td>
+                  <td></td>
+                </tr>
+              </table>
+            </li>
+            <li>
+              <table class="table">
+                <tr>
+                  <th>zu zahlender Betrag</th>
+                  <th></th>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th>Schlüssel</th>
+                  <td></td>
+                </tr>
+              </table>
+            </li>
+            <li>
+              <table class="table">
+                <tr>
+                  <th>enthaltene Versicherungssteuer</th>
+                  <th></th>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td></td>
+                </tr>
+                <tr>
+                  <th></th>
+                  <td></td>
+                </tr>
+              </table>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <ul class="scene-summary">
-        <li>
-          <table class="table">
-            <tr>
-              <th>PKW</th>
-              <td></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-            <tr>
-              <th>Normaltarif</th>
-              <td></td>
-            </tr>
-          </table>
-        </li>
-        <li>
-          <table class="table">
-            <tr>
-              <th></th>
-              <th>Regiokl.</th>
-              <th>Typkl.</th>
-            </tr>
-            <tr>
-              <th>Haftpflicht</th>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>Vollkasko</th>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>Teilkasko</th>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-              <td></td>
-            </tr>
-          </table>
-        </li>
-        <li>
-          <table class="table">
-            <tr>
-              <th>zu zahlender Betrag</th>
-              <th></th>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-            <tr>
-              <th>Schlüssel</th>
-              <td></td>
-            </tr>
-          </table>
-        </li>
-        <li>
-          <table class="table">
-            <tr>
-              <th>enthaltene Versicherungssteuer</th>
-              <th></th>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-          </table>
-        </li>
-      </ul>
-    </div>
+    </form>
   </div>
-
-</div>
