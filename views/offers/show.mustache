@@ -32,367 +32,342 @@
     </form>
   </div>
 
-  <div class="row">
-    <div class="col-md-12">
+  <div class="form-horizontal scene-form">
 
-      <div class="offer-details">
+    <div class="row">
+      <div class="col-md-12">
 
-        <ul class="nav nav-tabs scene-contents" role="tablist">
-          <li><a href="#kfz-fahrzeugdaten" class="kbd" role="tab" data-toggle="tab">Fahrzeugdaten</a></li>
-          <li><a href="#kfz-nutzung" class="kbd" role="tab" data-toggle="tab">Nutzung</a></li>
-          <li><a href="#kfz-versSchutz" class="kbd" role="tab" data-toggle="tab">Versicherungsschutz</a></li>
-        </ul>
+        <div class="offer-details">
 
-        <div>
-          <div id="kfz-fahrzeugdaten" class="tab-pane">
+          <ul class="nav nav-tabs scene-contents" role="tablist">
+            <li><a href="#vehicleData" class="kbd" role="tab" data-toggle="tab">Fahrzeugdaten</a></li>
+            <li><a href="#usage" class="kbd" role="tab" data-toggle="tab">Nutzung</a></li>
+            <li><a href="#insuranceCover" class="kbd" role="tab" data-toggle="tab">Versicherungsschutz</a></li>
+          </ul>
 
-            <form class="form-horizontal scene-form" role="form">
+          <div>
+            <div id="vehicleData" class="tab-pane">
+
               <fieldset class="scene-fieldset">
                 <div class="form-group">
-                  <label for="kfz-fahrzeugart" class="control-label">Fahrzeugart</label>
+                  <label for="vehicleData.vehicleType" class="control-label">Fahrzeugart</label>
                   <div class="fields">
-                    <input type="text" id="kfz-fahrzeugart" class="form-control" value="{{ offer.fahrzeugdaten.fahrzeugart }}" disabled>
+                    <input type="text" id="vehicleData.vehicleType" class="form-control" value="{{ offer.vehicleData.vehicleType }}" disabled>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="kfz-kennzeichen" class="control-label">Kennzeichen</label>
+                  <label for="vehicleData.licensePlate" class="control-label">Kennzeichen</label>
                   <div class="fields form-inline">
-                    <input type="text" id="kfz-kennzeichen" class="form-control" value="{{ offer.fahrzeugdaten.kennzeichen }}" disabled>
+                    <input type="text" id="vehicleData.licensePlate" name="vehicleData.licensePlate" class="form-control" value="{{ offer.vehicleData.licensePlate }}" disabled>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="kfz-plz" class="control-label"><abbr title="Postleitzahl">PLZ</abbr> / Ort</label>
-                  <div class="fields">
-                    <input type="text" id="kfz-plz" class="form-control" disabled>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="kfz-herstellernr" class="control-label">Hersteller-Nr.</label>
+                  <label for="vehicleData.manufacturerNo" class="control-label">Hersteller-Nr.</label>
                   <div class="fields form-inline">
                     <div class="input-group">
-                      <input type="search" id="kfz-herstellernr" class="form-control" value="{{ offer.fahrzeugdaten.hsn }}" disabled>
+                      <input type="text" id="vehicleData.manufacturerNo" name="vehicleData.manufacturerNo" class="form-control" value="{{ offer.vehicleData.manufacturerNo }}" disabled>
                     </div>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="kfz-typschluesselnr" class="control-label">Typschlüssel-Nr. <a class="control-label-help-link" data-toggle="modal" data-target=".modal-help-example" href="#"><i class="icon-question"></i></a></label>
+                  <label for="vehicleData.typeKey" class="control-label">Typschlüssel-Nr. <a class="control-label-help-link" data-toggle="modal" data-target=".modal-help-example" href="#"><i class="icon-question"></i></a></label>
                   <div class="fields">
-                    <input type="search" id="kfz-typschluesselnr" class="form-control" value="{{ offer.fahrzeugdaten.typschl }}" disabled>
+                    <input type="text" id="vehicleData.typeKey" name="vehicleData.typeKey" class="form-control" value="{{ offer.vehicleData.typeKey }}" disabled>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="kfz-erstzulassung" class="control-label">Erstzulassung</label>
+                  <label for="vehicleData.registrationDate" class="control-label">Erstzulassung</label>
                   <div class="fields">
-                    <input type="month" id="kfz-erstzulassung" class="form-control" value="{{ offer.fahrzeugdaten.erstzulassung }}" disabled>
+                    <input type="text" id="vehicleData.registrationDate" class="form-control" value="{{ offer.vehicleData.registrationDate }}" disabled>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="kfz-erwerb" class="control-label">Erwerb <abbr>VN</abbr> / <abbr>FH</abbr></label>
+                  <label for="vehicleData.identificationNumber" class="control-label">Fahrgestell-Nr.</label>
                   <div class="fields">
-                    <input type="month" id="kfz-erwerb" class="form-control" disabled>
-                  </div>
-                </div>
-
-                <div class="form-group">
-                  <label for="kfz-fahrgestell" class="control-label">Fahrgestell-Nr.</label>
-                  <div class="fields">
-                    <input type="text" id="kfz-fahrgestell" class="form-control" value="{{ offer.fahrzeugdaten.fahrgestell }}" disabled>
+                    <input type="text" id="vehicleData.identificationNumber" class="form-control" value="{{ offer.vehicleData.identificationNumber }}" disabled>
                   </div>
                 </div>
               </fieldset>
 
               <fieldset class="scene-fieldset">
                 <div class="form-group form-group-multiple">
-                  <label for="kfz-saison-von" class="control-label">Saison von</label>
+                  <label for="vehicleData.licensePlateType" class="control-label">KFZ-Kennzeichen-Art</label>
                   <div class="col-sm-3 form-group-multiple-item">
-                    <input type="month" id="kfz-saison-von" class="form-control" disabled>
+                    <input type="text" id="vehicleData.licensePlateType" class="form-control" value="{{ offer.vehicleData.licensePlateType }}" disabled>
                   </div>
-                  <label for="kfz-saison-bis" class="control-label">Saison bis</label>
+
+                  <label for="changeableLicensePlate" class="control-label">Wechselkennzeichen</label>
                   <div class="col-sm-3 form-group-multiple-item">
-                    <input type="month" id="kfz-saison-bis" class="form-control" disabled>
+                    <input type="text" id="changeableLicensePlate" class="form-control" value="{{ offer.vehicleData.changeableLicensePlate }}" disabled>
                   </div>
                 </div>
 
                 <div class="form-group form-group-multiple">
-                  <label for="kfz-kennzeichen-art" class="control-label">KFZ-Kennzeichen-Art</label>
+                  <label for="vehicleData.kilowatt" class="control-label">Leistung (kW)</label>
                   <div class="col-sm-3 form-group-multiple-item">
-                    <input type="text" id="kfz-kennzeichen-art" class="form-control" value="{{ offer.fahrzeugdaten.kennzeichenart }}" disabled>
+                    <input type="text" id="vehicleData.kilowatt" class="form-control" disabled>
                   </div>
-
-                  <label for="kfz-wechselkennzeichen" class="control-label">Wechselkennzeichen</label>
+                  <label for="vehicleData.horsepower" class="control-label">Leistung (PS)</label>
                   <div class="col-sm-3 form-group-multiple-item">
-                    <input type="text" id="kfz-wechselkennzeichen" class="form-control" value="{{ offer.fahrzeugdaten.wechselkennzeichen }}" disabled>
-                  </div>
-                </div>
-
-                <div class="form-group form-group-multiple">
-                  <label for="kfz-leistung-kw" class="control-label">Leistung (kW)</label>
-                  <div class="col-sm-3 form-group-multiple-item">
-                    <input type="text" id="kfz-leistung-kw" class="form-control" disabled>
-                  </div>
-                  <label for="kfz-leistung-ps" class="control-label">Leistung (PS)</label>
-                  <div class="col-sm-3 form-group-multiple-item">
-                    <input type="text" id="kfz-leistung-ps" class="form-control" value="{{ offer.fahrzeugdaten.fahrzeugstaerkePS }}" disabled>
+                    <input type="text" id="vehicleData.horsepower" name="vehicleData.horsepower" class="form-control" value="{{ offer.vehicleData.horsepower }}" disabled>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="kfz-austauschmotor" class="control-label">Austauschmotor</label>
+                  <label class="control-label" for="changeableEngine">Austauschmotor</label>
                   <div class="col-sm-3 form-group-multiple-item">
-                    <input type="text" id="kfz-austauschmotor" class="form-control" value="{{ offer.fahrzeugdaten.austauschmotor }}" disabled>
+                    <input type="text" id="changeableEngine" class="form-control" value="{{ offer.vehicleData.changeableEngine }}" disabled>
                   </div>
                 </div>
 
               </fieldset>
-            </form>
-          </div>
+            </div>
 
-          <div id="kfz-nutzung" class="tab-pane">
-            <form class="form-horizontal scene-form" role="form">
+            <div id="usage" class="tab-pane">
               <fieldset class="scene-fieldset">
                 <div class="form-group">
-                  <label for="kfz-beliebigeFahrer" class="control-label">beliebige Fahrer</label>
+                  <label for="usage.anyDriver" class="control-label">beliebige Fahrer</label>
                   <div class="fields">
-                    <input type="text" id="kfz-beliebigeFahrer" class="form-control" value="{{ offer.nutzung.beliebigeFahrer }}" disabled>
+                    <input type="text" id="usage.anyDriver" name="usage.anyDriver" class="form-control" value="{{ offer.usage.anyDriver }}" disabled>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="kfz-abweichenderFahrzeughalter" class="control-label">abweichender Fahrzeughalter</label>
+                  <label for="usage.differentVehicleOwner" class="control-label">abweichender Fahrzeughalter</label>
                   <div class="fields">
-                    <input type="text" id="kfz-abweichenderFahrzeughalter" class="form-control" value="{{ offer.nutzung.abweichenderFahrzeughalter }}" disabled>
+                    <input type="text" id="usage.differentVehicleOwner" name="usage.anyDriver" class="form-control" value="{{ offer.usage.differentVehicleOwner }}" disabled>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="kfz-fahrleistungKm" class="control-label">Fahrleistung (jährl./Saison)</label>
+                  <label for="usage.drivingPerformance" class="control-label">Fahrleistung (jährl./Saison)</label>
                   <div class="fields">
-                    <input type="text" id="kfz-fahrleistungKm" class="form-control" value="{{ offer.nutzung.fahrleistungKm }}" disabled>
+                    <input type="text" id="usage.drivingPerformance" name="usage.drivingPerformance" class="form-control" value="{{ offer.usage.drivingPerformance }}" disabled>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="kfz-kilometerstand" class="control-label">Kilometerstand</label>
+                  <label for="usage.mileage" class="control-label">Kilometerstand</label>
                   <div class="fields">
-                    <input type="text" id="kfz-kilometerstand" class="form-control" value="{{ offer.nutzung.kilometerstand }}" disabled>
+                    <input type="text" id="usage.mileage" name="usage.mileage" class="form-control" value="{{ offer.usage.mileage }}" disabled>
                   </div>
                 </div>
               </fieldset>
 
               <fieldset class="scene-fieldset">
                 <div class="form-group">
-                  <label for="kfz-nutzung" class="control-label">Fahrzeugnutzung</label>
+                  <label for="usage.usage" class="control-label">Fahrzeugnutzung</label>
                   <div class="fields">
-                    <input type="text" id="kfz-nutzung" class="form-control" value="{{ offer.nutzung.nutzung }}" disabled>
+                    <input type="text" id="usage.usage" name="usage.usage" class="form-control" value="{{ offer.usage.usage }}" disabled>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="kfz-selbstGenEigentum" class="control-label">selbstgen. Wohneigentum</label>
+                  <label class="control-label" for="usage.ownerOccupiedHome">selbstgen. Wohneigentum</label>
                   <div class="fields">
-                    <input type="text" id="kfz-selbstGenEigentum" class="form-control" value="{{ offer.nutzung.selbstGenEigentum }}" disabled>
+                    <input type="text" id="usage.homeOwnershipType" name="usage.homeOwnershipType" class="form-control" value="{{ offer.usage.ownerOccupiedHome }}" disabled>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="kfz-wohneigentumart" class="control-label">Wohneigentumsart</label>
+                  <label for="usage.homeOwnershipType" class="control-label">Wohneigentumsart</label>
                   <div class="fields">
-                    <input type="text" id="kfz-wohneigentumart" class="form-control" value="{{ offer.nutzung.wohneigentumart }}" disabled>
+                    <input type="text" id="usage.homeOwnershipType" name="usage.homeOwnershipType" class="form-control" value="{{ offer.usage.homeOwnershipType }}" disabled>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="kfz-nachtAbstellplatz" class="control-label">nächtlicher Abstellplatz</label>
+                  <label for="usage.nightlyPound" class="control-label">nächtlicher Abstellplatz</label>
                   <div class="fields">
-                    <input type="text" id="kfz-nachtAbstellplatz" class="form-control" value="{{ offer.nutzung.nachtAbstellplatz }}" disabled>
+                    <input type="text" id="usage.nightlyPound" name="usage.nightlyPound" class="form-control" value="{{ offer.usage.nightlyPound }}" disabled>
                   </div>
                 </div>
               </fieldset>
-            </form>
-          </div>
+            </div>
 
-          <div id="kfz-versSchutz" class="tab-pane">
-            <form class="form-horizontal scene-form" role="form">
+            <div id="insuranceCover" class="tab-pane">
               <fieldset class="scene-fieldset">
                 <div class="form-group">
-                  <label for="kfz-rahmenvertrag" class="control-label">Rahmenvertrag</label>
+                  <label for="insuranceCover.basicAgreement" class="control-label">Rahmenvertrag</label>
                   <div class="fields">
-                    <input type="text" id="kfz-rahmenvertrag" class="form-control" value="{{ offer.versSchutz.rahmenvertrag }}" disabled>
+                    <input type="text" id="insuranceCover.basicAgreement" name="insuranceCover.basicAgreement" class="form-control" value="{{ offer.insuranceCover.basicAgreement }}" disabled>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="kfz-tarifgruppe" class="control-label">Tarifgruppe</label>
+                  <label for="insuranceCover.wageGroup" class="control-label">Tarifgruppe</label>
                   <div class="fields">
-                    <input type="text" id="kfz-tarifgruppe" class="form-control" value="{{ offer.versSchutz.tarifgruppe }}" disabled>
+                    <input type="text" id="insuranceCover.wageGroup" name="insuranceCover.wageGroup" class="form-control" value="{{ offer.insuranceCover.wageGroup }}" disabled>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="kfz-versBeginn" class="control-label">Versicherungsbeginn</label>
+                  <label for="insuranceCover.start" class="control-label">Versicherungsbeginn</label>
                   <div class="fields">
-                    <input type="text" id="kfz-versBeginn" class="form-control" value="{{ offer.versSchutz.versBeginn }}" disabled>
+                    <input type="text" id="insuranceCover.start" name="insuranceCover.start" class="form-control" value="{{ offer.insuranceCover.start }}" disabled>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="kfz-zahlungsweise" class="control-label">Zahlungsweise</label>
+                  <label for="insuranceCover.paymentMethod" class="control-label">Zahlungsweise</label>
                   <div class="fields">
-                    <input type="text" id="kfz-zahlungsweise" class="form-control" value="{{ offer.versSchutz.zahlungsweise }}" disabled>
+                    <input type="text" id="insuranceCover.paymentMethod" name="insuranceCover.paymentMethod" class="form-control" value="{{ offer.insuranceCover.paymentMethod }}" disabled>
                   </div>
                 </div>
               </fieldset>
 
               <fieldset class="scene-fieldset">
                 <div class="form-group">
-                  <label for="kfz-harfpflichtSFR" class="control-label">Haftpflicht Schadensfreiheitrabatt</label>
+                  <label for="insuranceCover.liabilityDiscount" class="control-label">Haftpflicht Schadensfreiheitrabatt</label>
                   <div class="fields">
-                    <input type="text" id="kfz-harfpflichtSFR" class="form-control" value="{{ offer.versSchutz.haftpflichSFR }}" disabled>
+                    <input type="text" id="insuranceCover.liabilityDiscount" name="insuranceCover.liabilityDiscount" class="form-control" value="{{ offer.insuranceCover.liabilityDiscount }}" disabled>
                   </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="kfz-volkaskoSFR" class="control-label">Vollkasko-Schadensfreiheitrabatt</label>
+                  <label for="insuranceCover.comprehensiveCoverDiscount" class="control-label">Vollkasko-Schadensfreiheitrabatt</label>
                   <div class="fields">
-                    <input type="text" id="kfz-volkaskoSFR" class="form-control" value="{{ offer.versSchutz.volkaskoSFR }}" disabled>
+                    <input type="text" id="insuranceCover.comprehensiveCoverDiscount" name="insuranceCover.comprehensiveCoverDiscount" class="form-control" value="{{ offer.insuranceCover.comprehensiveCoverDiscount }}" disabled>
                   </div>
               </fieldset>
-            </form>
+
+              </div>
+            </div>
 
           </div>
         </div>
+
       </div>
-
     </div>
-  </div>
 
-  <hr>
+    <hr>
 
-  <div class="row">
-    <div class="col-md-12">
-      <div class="btn-group">
-        <button type="button" class="btn btn-primary">Berechnen</button>
+    <div class="row">
+      <div class="col-md-12">
+        <div class="btn-group">
+          <button type="button" class="btn btn-primary">Berechnen</button>
+        </div>
+
+        <div class="btn-group">
+          <a href="{{ offer.offerEditUri }}" class="btn btn-default">Angebot bearbeiten</a>
+        </div>
+
       </div>
+    </div>
 
-      <div class="btn-group">
-        <a href="{{ offer.offerEditUri }}" class="btn btn-default">Angebot bearbeiten</a>
+    <div class="row">
+      <div class="col-md-12">
+        <ul class="scene-summary">
+          <li>
+            <table class="table">
+              <tr>
+                <th>PKW</th>
+                <td></td>
+              </tr>
+              <tr>
+                <th></th>
+                <td></td>
+              </tr>
+              <tr>
+                <th></th>
+                <td></td>
+              </tr>
+              <tr>
+                <th></th>
+                <td></td>
+              </tr>
+              <tr>
+                <th>Normaltarif</th>
+                <td></td>
+              </tr>
+            </table>
+          </li>
+          <li>
+            <table class="table">
+              <tr>
+                <th></th>
+                <th>Regiokl.</th>
+                <th>Typkl.</th>
+              </tr>
+              <tr>
+                <th>Haftpflicht</th>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>Vollkasko</th>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th>Teilkasko</th>
+                <td></td>
+                <td></td>
+              </tr>
+              <tr>
+                <th></th>
+                <td></td>
+                <td></td>
+              </tr>
+            </table>
+          </li>
+          <li>
+            <table class="table">
+              <tr>
+                <th>zu zahlender Betrag</th>
+                <th></th>
+              </tr>
+              <tr>
+                <th></th>
+                <td></td>
+              </tr>
+              <tr>
+                <th></th>
+                <td></td>
+              </tr>
+              <tr>
+                <th></th>
+                <td></td>
+              </tr>
+              <tr>
+                <th>Schlüssel</th>
+                <td></td>
+              </tr>
+            </table>
+          </li>
+          <li>
+            <table class="table">
+              <tr>
+                <th>enthaltene Versicherungssteuer</th>
+                <th></th>
+              </tr>
+              <tr>
+                <th></th>
+                <td></td>
+              </tr>
+              <tr>
+                <th></th>
+                <td></td>
+              </tr>
+              <tr>
+                <th></th>
+                <td></td>
+              </tr>
+              <tr>
+                <th></th>
+                <td></td>
+              </tr>
+            </table>
+          </li>
+        </ul>
       </div>
-
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col-md-12">
-      <ul class="scene-summary">
-        <li>
-          <table class="table">
-            <tr>
-              <th>PKW</th>
-              <td></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-            <tr>
-              <th>Normaltarif</th>
-              <td></td>
-            </tr>
-          </table>
-        </li>
-        <li>
-          <table class="table">
-            <tr>
-              <th></th>
-              <th>Regiokl.</th>
-              <th>Typkl.</th>
-            </tr>
-            <tr>
-              <th>Haftpflicht</th>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>Vollkasko</th>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th>Teilkasko</th>
-              <td></td>
-              <td></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-              <td></td>
-            </tr>
-          </table>
-        </li>
-        <li>
-          <table class="table">
-            <tr>
-              <th>zu zahlender Betrag</th>
-              <th></th>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-            <tr>
-              <th>Schlüssel</th>
-              <td></td>
-            </tr>
-          </table>
-        </li>
-        <li>
-          <table class="table">
-            <tr>
-              <th>enthaltene Versicherungssteuer</th>
-              <th></th>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-            <tr>
-              <th></th>
-              <td></td>
-            </tr>
-          </table>
-        </li>
-      </ul>
-    </div>
   </div>
 
 </div>
