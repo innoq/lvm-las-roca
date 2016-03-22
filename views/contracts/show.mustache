@@ -1,4 +1,9 @@
 <div class="container container-main-content scene">
+  {{# success }}
+  <div class="alert alert-success fade in" role="alert">
+    Der Schaden wurde erfolgreich gemeldet
+  </div>
+  {{/ success }}
 
   <div class="row">
     <header class="scene-header page-header">
@@ -288,6 +293,9 @@
         <a href="{{ letter_url }}/template?contractId={{ contractId }}&partnerId={{ partnerId }}" class="btn btn-default">Brief schreiben</a>
       </div>
 
+      <div class="btn-group">
+        <a href="{{ damage_url }}/damage/new?branch=kraftfahrt&contractId={{ contractId }}&partnerId={{ partnerId }}" class="btn btn-default">Schaden melden</a>
+      </div>
     </div>
   </div>
 
