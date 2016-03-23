@@ -1,16 +1,16 @@
-{{# offer.errors.length }}
+{{# errors.length }}
 <div class="alert alert-danger fade in" role="alert">
-  Es sind {{ offer.errors.length }} Fehler aufgetreten:
+  Es sind {{ errors.length }} Fehler aufgetreten:
 
   <ul>
-    {{# offer.errors }}
+    {{# errors }}
     <li>
       <a href="#{{ bezugsFeld }}" class="alert-link">
         <i class="glyphicon glyphicon-arrow-right"></i>
         {{ bezugsFeld }}
       </a>: {{ fehlerText }}
     </li>
-    {{/ offer.errors }}
+    {{/ errors }}
   </ul>
 </div>
-{{/ offer.errors.length }}
+{{/ errors.length }}

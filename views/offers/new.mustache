@@ -28,7 +28,9 @@
     </form>
   </div>
 
-  {{> errors }}
+  {{# offer }}
+    {{> errors }}
+  {{/ offer }}
 
   <form class="form-horizontal scene-form" role="form" action="{{ partner._links.offers.href }}/calculation" method="post">
 
