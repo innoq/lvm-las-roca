@@ -1,5 +1,5 @@
 import $ from 'jquery'
-import pjax from 'jquery-pjax'
+import 'jquery-pjax'
 
 let doc = $(document)
 
