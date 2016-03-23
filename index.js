@@ -1,4 +1,5 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const app = express()
 const searchController = require('./lib/controllers/search')
 const resultController = require('./lib/controllers/result')
@@ -38,6 +39,8 @@ app.use(require('./lib/render_without_layout'))
 
 app.use(compression())
 
+app.use(bodyParser.urlencoded({ extended: false }))
+
 // Mount the assets
 app.use('/assets', express.static('public'))
 
@@ -46,12 +49,13 @@ app.get('/result', resultController.get)
 app.get('/partners/:id', partnersController.get)
 app.get('/partners/:id/branches/:branch', branchesController.show)
 app.get('/partners/:id/offers', offersController.index)
+app.get('/partners/:id/offers/new', offersController.new)
 app.get('/partners/:id/offers/:offer_id', offersController.show)
+app.get('/partners/:id/offers/:offer_id/edit', offersController.edit)
+app.post('/partners/:id/offers/calculation', offersController.calc)
 app.get('/partners/:id/proposals', proposalsController.index)
 app.get('/partners/:id/contracts', contractsController.index)
-app.get('/partners/:id/contracts/new', contractsController.new)
 app.get('/partners/:id/contracts/:contract_id', contractsController.show)
-app.get('/partners/:id/contracts/:contract_id/edit', contractsController.edit)
 
 module.exports = app
 
