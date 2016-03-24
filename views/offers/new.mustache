@@ -61,6 +61,7 @@
                       <option>…</option>
                     </select>
                   </div>
+                  <span class="help-block">{{ errors.vehicleData.vehicleType.fehlerText }}</span>
                 </div>
 
                 {{# errors.vehicleData.licensePlate }}
@@ -73,6 +74,7 @@
                   <div class="fields form-inline">
                     <input type="text" id="vehicleData.licensePlate" name="vehicleData.licensePlate" class="form-control" value="{{ offer.vehicleData.licensePlate }}">
                   </div>
+                  <span class="help-block">{{ errors.vehicleData.licensePlate.fehlerText }}</span>
                 </div>
 
                 {{# errors.vehicleData.manufacturerNo }}
@@ -87,6 +89,7 @@
                       <input type="search" id="vehicleData.manufacturerNo" name="vehicleData.manufacturerNo" class="form-control" value="{{ offer.vehicleData.manufacturerNo }}">
                     </div>
                   </div>
+                  <span class="help-block">{{ errors.vehicleData.manufacturerNo.fehlerText }}</span>
                 </div>
 
                 {{# errors.vehicleData.typeKey }}
@@ -99,6 +102,7 @@
                   <div class="fields">
                     <input type="search" id="vehicleData.typeKey" name="vehicleData.typeKey" class="form-control" value="{{ offer.vehicleData.typeKey }}">
                   </div>
+                  <span class="help-block">{{ errors.vehicleData.typeKey.fehlerText }}</span>
                 </div>
 
                 {{# errors.vehicleData.registrationDate }}
@@ -111,6 +115,7 @@
                   <div class="fields">
                     <input type="month" id="vehicleData.registrationDate" class="form-control" value="{{ offer.vehicleData.registrationDate }}">
                   </div>
+                  <span class="help-block">{{ errors.vehicleData.registrationDate.fehlerText }}</span>
                 </div>
 
                 {{# errors.vehicleData.identificationNumber }}
@@ -123,6 +128,7 @@
                   <div class="fields">
                     <input type="text" id="vehicleData.identificationNumber" class="form-control" value="{{ offer.vehicleData.identificationNumber }}">
                   </div>
+                  <span class="help-block">{{ errors.vehicleData.identificationNumber.fehlerText }}</span>
                 </div>
               </fieldset>
 
@@ -172,6 +178,7 @@
                       <input name="vehicleData.changeableEngine" value="true" type="radio"> ja
                     </label>
                   </div>
+                  <span class="help-block">{{ errors.vehicleData.changeableEngine.fehlerText }}</span>
                 </div>
 
               </fieldset>
@@ -189,6 +196,7 @@
                   <div class="fields">
                     <input type="text" id="usage.anyDriver" name="usage.anyDriver" class="form-control" value="{{ offer.usage.anyDriver }}">
                   </div>
+                  <span class="help-block">{{ errors.usage.anyDriver.fehlerText }}</span>
                 </div>
 
                 {{# errors.usage.differentVehicleOwner }}
@@ -206,6 +214,7 @@
                       <input name="usage.differentVehicleOwner" value="true" type="radio"> ja
                     </label>
                   </div>
+                  <span class="help-block">{{ errors.usage.differentVehicleOwner.fehlerText }}</span>
                 </div>
 
                 {{# errors.usage.drivingPerformance }}
@@ -218,6 +227,7 @@
                   <div class="fields">
                     <input type="text" id="usage.drivingPerformance" name="usage.drivingPerformance" class="form-control" value="{{ offer.usage.drivingPerformance }}">
                   </div>
+                  <span class="help-block">{{ errors.usage.drivingPerformance.fehlerText }}</span>
                 </div>
 
                 {{# errors.usage.mileage }}
@@ -230,6 +240,7 @@
                   <div class="fields">
                     <input type="text" id="usage.mileage" name="usage.mileage" class="form-control" value="{{ offer.usage.mileage }}">
                   </div>
+                  <span class="help-block">{{ errors.usage.mileage.fehlerText }}</span>
                 </div>
               </fieldset>
 
@@ -244,6 +255,7 @@
                   <div class="fields">
                     <input type="text" id="usage.usage" name="usage.usage" class="form-control" value="{{ offer.usage.usage }}">
                   </div>
+                  <span class="help-block">{{ errors.usage.mileage.fehlerText }}</span>
                 </div>
 
                 {{# errors.usage.ownerOccupiedHome }}
@@ -261,6 +273,7 @@
                       <input name="usage.ownerOccupiedHome" value="true" type="radio"> ja
                     </label>
                   </div>
+                  <span class="help-block">{{ errors.usage.ownerOccupiedHome.fehlerText }}</span>
                 </div>
 
                 {{# errors.usage.homeOwnershipType }}
@@ -273,6 +286,7 @@
                   <div class="fields">
                     <input type="text" id="usage.homeOwnershipType" name="usage.homeOwnershipType" class="form-control" value="{{ offer.usage.homeOwnershipType }}">
                   </div>
+                  <span class="help-block">{{ errors.usage.homeOwnershipType.fehlerText }}</span>
                 </div>
 
                 {{# errors.usage.nightlyPound }}
@@ -285,6 +299,7 @@
                   <div class="fields">
                     <input type="text" id="usage.nightlyPound" name="usage.nightlyPound" class="form-control" value="{{ offer.usage.nightlyPound }}">
                   </div>
+                  <span class="help-block">{{ errors.usage.nightlyPound.fehlerText }}</span>
                 </div>
               </fieldset>
             </div>
@@ -301,6 +316,7 @@
                   <div class="fields">
                     <input type="text" id="insuranceCover.basicAgreement" name="insuranceCover.basicAgreement" class="form-control" value="{{ offer.insuranceCover.basicAgreement }}">
                   </div>
+                  <span class="help-block">{{ errors.insuranceCover.basicAgreement.fehlerText }}</span>
                 </div>
 
                 {{# errors.insuranceCover.wageGroup }}
@@ -313,6 +329,7 @@
                   <div class="fields">
                     <input type="text" id="insuranceCover.wageGroup" name="insuranceCover.wageGroup" class="form-control" value="{{ offer.insuranceCover.wageGroup }}">
                   </div>
+                  <span class="help-block">{{ errors.insuranceCover.wageGroup.fehlerText }}</span>
                 </div>
 
                 {{# errors.insuranceCover.start }}
@@ -325,6 +342,7 @@
                   <div class="fields">
                     <input type="text" id="insuranceCover.start" name="insuranceCover.start" class="form-control" value="{{ offer.insuranceCover.start }}">
                   </div>
+                  <span class="help-block">{{ errors.insuranceCover.start.fehlerText }}</span>
                 </div>
 
                 {{# errors.insuranceCover.paymentMethod }}
@@ -341,6 +359,7 @@
                       {{/ offer.insuranceCover.availablePaymentMethods }}
                     </select>
                   </div>
+                  <span class="help-block">{{ errors.insuranceCover.paymentMethod.fehlerText }}</span>
                 </div>
               </fieldset>
 
@@ -355,6 +374,7 @@
                   <div class="fields">
                     <input type="text" id="insuranceCover.liabilityDiscount" name="insuranceCover.liabilityDiscount" class="form-control" value="{{ offer.insuranceCover.liabilityDiscount }}">
                   </div>
+                  <span class="help-block">{{ errors.insuranceCover.liabilityDiscount.fehlerText }}</span>
                 </div>
 
                 {{# errors.insuranceCover.comprehensiveCoverDiscount }}
@@ -367,9 +387,10 @@
                   <div class="fields">
                     <input type="text" id="insuranceCover.comprehensiveCoverDiscount" name="insuranceCover.comprehensiveCoverDiscount" class="form-control" value="{{ offer.insuranceCover.comprehensiveCoverDiscount }}">
                   </div>
+                  <span class="help-block">{{ errors.insuranceCover.comprehensiveCoverDiscount.fehlerText }}</span>
+                </div>
               </fieldset>
 
-              </div>
             </div>
 
           </div>
