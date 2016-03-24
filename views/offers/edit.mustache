@@ -243,7 +243,7 @@
                   <div class="fields">
                     <select id="insuranceCover.paymentMethod" name="insuranceCover.paymentMethod" class="form-control">
                       {{# offer.insuranceCover.availablePaymentMethods }}
-                        <option id="{{ id }}" value="{{ name }}">{{ name }}</option>
+                      <option id="{{ id }}" value="{{ name }}">{{ name }}</option>
                       {{/ offer.insuranceCover.availablePaymentMethods }}
                     </select>
                   </div>
@@ -263,9 +263,9 @@
                   <div class="fields">
                     <input type="text" id="insuranceCover.comprehensiveCoverDiscount" name="insuranceCover.comprehensiveCoverDiscount" class="form-control" value="{{ offer.insuranceCover.comprehensiveCoverDiscount }}">
                   </div>
+                </div>
               </fieldset>
 
-              </div>
             </div>
 
           </div>
@@ -273,21 +273,23 @@
 
       </div>
 
-      <hr>
+    </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          <div class="btn-group">
-            <input type="submit" class="btn btn-primary" value="Berechnen">
-          </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="btn-group">
+          <input type="submit" class="btn btn-primary" value="Berechnen">
         </div>
       </div>
+    </div>
 
-      <div class="row">
-        <div class="col-md-12">
-          {{> scene_summary }}
-        </div>
+    <div class="row">
+      <div class="col-md-12">
+        {{> scene_summary }}
       </div>
+    </div>
 
   </form>
 </div>
