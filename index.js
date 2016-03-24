@@ -41,6 +41,16 @@ app.use(compression())
 
 app.use(bodyParser.urlencoded({ extended: false }))
 
+// If the page is embedded, provide that info to the templates
+app.use((req, res, next) => {
+  if (req.headers.embedded === 'true') {
+    res.locals.isEmbedded = true
+  } else {
+    res.locals.isEmbedded = false
+  }
+  next()
+})
+
 // Mount the assets
 app.use('/assets', express.static('public'))
 
