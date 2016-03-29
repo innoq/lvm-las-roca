@@ -78,3 +78,23 @@
 * Lucas: 113h
 * Marc: 96h
 * Insgesamt 209h von 320h
+
+## KW 12
+
+* 21.03. (Lucas: h, Marc: 8h)
+  * Vertrags-/Angebotsdetails
+* 22.03. (Lucas: h, Marc: 8,5h)
+  * Angebotsvalidierung
+  * Datenvorbelegung
+* 23.03. (Lucas: h, Marc: 6,5h)
+  * Angebotsvalidierung, Fehlernavigation
+* 24.03. (Lucas: h, Marc: 7,5h)
+  * Angebot kopieren
+* 25.03. (Lucas: 0h, Marc: 0h)
+  * Feiertag Karfreitag
+
+### Zwischenstand:
+
+* Lucas:
+* Marc: 126,5h
+* Insgesamt X h von 320h
