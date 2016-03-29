@@ -32,7 +32,7 @@
     {{> errors }}
   {{/ offer }}
 
-  <form class="form-horizontal scene-form" role="form" action="{{ partner._links.offers.href }}/calculation" method="post">
+  <form class="form-horizontal scene-form" role="form" action="{{ partner._links.offers.href }}" method="post">
 
     <div class="row">
       <div class="col-md-12">
@@ -40,12 +40,111 @@
         <div class="offer-details">
 
           <ul class="nav nav-tabs scene-contents" role="tablist">
+            <li><a href="#personal" class="kbd" role="tab" data-toggle="tab">Versicherungsnehmer</a></li>
             <li><a href="#vehicleData" class="kbd" role="tab" data-toggle="tab">Fahrzeugdaten</a></li>
             <li><a href="#usage" class="kbd" role="tab" data-toggle="tab">Nutzung</a></li>
             <li><a href="#insuranceCover" class="kbd" role="tab" data-toggle="tab">Versicherungsschutz</a></li>
           </ul>
 
           <div>
+            <div id="personal" class="tab-pane">
+
+              <fieldset class="scene-fieldset">
+                {{# errors.personal.dob }}
+                <div class="form-group has-error">
+                {{/ errors.personal.dob }}
+                {{^ errors.personal.dob }}
+                <div class="form-group">
+                {{/ errors.personal.dob }}
+                  <label for="personal.dob" class="control-label">Geburtsdatum</label>
+                  <div class="fields form-inline">
+                    <input type="text" id="personal.dob" name="personal.dob" class="form-control" value="{{ offer.personal.dob }}">
+                    {{# errors.personal.dob }}
+                    <span class="help-block">{{ errors.personal.dob.fehlerText }}</span>
+                    {{/ errors.personal.dob }}
+                  </div>
+                </div>
+
+                {{# errors.personal.street }}
+                <div class="form-group has-error">
+                {{/ errors.personal.street }}
+                {{^ errors.personal.street }}
+                <div class="form-group">
+                {{/ errors.personal.street }}
+                  <label for="personal.street" class="control-label">Straße</label>
+                  <div class="fields">
+                    <input type="search" id="personal.street" name="personal.street" class="form-control" value="{{ offer.personal.street }}">
+                    {{# errors.personal.street }}
+                    <span class="help-block">{{ errors.personal.street.fehlerText }}</span>
+                    {{/ errors.personal.street }}
+                  </div>
+                </div>
+
+                {{# errors.personal.postcode }}
+                <div class="form-group has-error">
+                {{/ errors.personal.postcode }}
+                {{^ errors.personal.postcode }}
+                <div class="form-group">
+                {{/ errors.personal.postcode }}
+                  <label for="personal.postcode" class="control-label">Postleitzahl</label>
+                  <div class="fields form-inline">
+                    <input type="text" id="personal.postcode" name="personal.postcode" class="form-control" value="{{ offer.personal.postcode }}">
+                    {{# errors.personal.postcode }}
+                    <span class="help-block">{{ errors.personal.postcode.fehlerText }}</span>
+                    {{/ errors.personal.postcode }}
+                  </div>
+                </div>
+
+                {{# errors.personal.city }}
+                <div class="form-group has-error">
+                {{/ errors.personal.city }}
+                {{^ errors.personal.city }}
+                <div class="form-group">
+                {{/ errors.personal.city }}
+                  <label for="personal.city" class="control-label">Stadt</label>
+                  <div class="fields form-inline">
+                    <input type="text" id="personal.city" name="personal.city" class="form-control" value="{{ offer.personal.city }}">
+                    {{# errors.personal.city }}
+                    <span class="help-block">{{ errors.personal.city.fehlerText }}</span>
+                    {{/ errors.personal.city }}
+                  </div>
+                </div>
+
+                {{# errors.personal.district }}
+                <div class="form-group has-error">
+                {{/ errors.personal.district }}
+                {{^ errors.personal.district }}
+                <div class="form-group">
+                {{/ errors.personal.district }}
+                  <label for="personal.district" class="control-label">Stadtteil</label>
+                  <div class="fields form-inline">
+                    <input type="text" id="personal.district" name="personal.district" class="form-control" value="{{ offer.personal.district }}">
+                    {{# errors.personal.district }}
+                    <span class="help-block">{{ errors.personal.district.fehlerText }}</span>
+                    {{/ errors.personal.district }}
+                  </div>
+                </div>
+
+                {{# errors.personal.job }}
+                <div class="form-group has-error">
+                {{/ errors.personal.job }}
+                {{^ errors.personal.job }}
+                <div class="form-group">
+                {{/ errors.personal.job }}
+                  <label for="personal.job" class="control-label">Beruf</label>
+                  <div class="fields">
+                    <select id="personal.job" name="personal.job" class="form-control">
+                      <option>{{ offer.personal.job }}</option>
+                      <option>…</option>
+                    </select>
+                    {{# errors.personal.job }}
+                    <span class="help-block">{{ errors.personal.job.fehlerText }}</span>
+                    {{/ errors.personal.job }}
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
             <div id="vehicleData" class="tab-pane">
               <fieldset class="scene-fieldset">
                 {{# errors.vehicleData.vehicleType }}
@@ -445,7 +544,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="btn-group">
-            <input type="submit" class="btn btn-primary" value="Berechnen">
+            <input type="submit" class="btn btn-primary" value="Speichern">
           </div>
         </div>
       </div>
