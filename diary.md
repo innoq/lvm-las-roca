@@ -81,17 +81,28 @@
 
 ## KW 12
 
-* 21.03. (Lucas: h, Marc: 8h)
+* 21.03. (Lucas: 8h, Marc: 8h)
   * Vertrags-/Angebotsdetails
-* 22.03. (Lucas: h, Marc: 8,5h)
+* 22.03. (Lucas: 8h, Marc: 8,5h)
   * Angebotsvalidierung
   * Datenvorbelegung
-* 23.03. (Lucas: h, Marc: 6,5h)
+* 23.03. (Lucas: 8h, Marc: 6,5h)
   * Angebotsvalidierung, Fehlernavigation
-* 24.03. (Lucas: h, Marc: 7,5h)
+* 24.03. (Lucas: 8h, Marc: 7,5h)
   * Angebot kopieren
+  * Verschiedene kleinere Funktionalität
 * 25.03. (Lucas: 0h, Marc: 0h)
   * Feiertag Karfreitag
+
+## KW 13
+
+* 28.03. (Lucas: 0h, Marc: 0h)
+  * Feiertag Ostermontag
+* 29.03. (Lucas: 8h, Marc: h)
+  * Dokumentation
+* 30.03. (Lucas: 8h, Marc: h)
+* 31.03. (Lucas: 8h, Marc: h)
+  * Abschluss
 
 ### Zwischenstand:
 
