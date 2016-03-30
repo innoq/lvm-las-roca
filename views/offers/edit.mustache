@@ -70,7 +70,7 @@
                   <label for="vehicleData.manufacturerNo" class="control-label">Hersteller-Nr.</label>
                   <div class="fields form-inline">
                     <div class="input-group">
-                      <input type="search" id="vehicleData.manufacturerNo" name="vehicleData.manufacturerNo" class="form-control" value="{{ offer.vehicleData.manufacturerNo }}">
+                      <input type="text" id="vehicleData.manufacturerNo" name="vehicleData.manufacturerNo" class="form-control" value="{{ offer.vehicleData.manufacturerNo }}">
                     </div>
                   </div>
                 </div>
@@ -78,7 +78,7 @@
                 <div class="form-group">
                   <label for="vehicleData.typeKey" class="control-label">Typschlüssel-Nr. <a class="control-label-help-link" data-toggle="modal" data-target=".modal-help-example" href="#"><i class="icon-question"></i></a></label>
                   <div class="fields">
-                    <input type="search" id="vehicleData.typeKey" name="vehicleData.typeKey" class="form-control" value="{{ offer.vehicleData.typeKey }}">
+                    <input type="text" id="vehicleData.typeKey" name="vehicleData.typeKey" class="form-control" value="{{ offer.vehicleData.typeKey }}">
                   </div>
                 </div>
 
@@ -92,7 +92,7 @@
                 <div class="form-group">
                   <label for="vehicleData.identificationNumber" class="control-label">Fahrgestell-Nr.</label>
                   <div class="fields">
-                    <input type="text" id="vehicleData.identificationNumber" name="vehicleData.identificationNumber" class="form-control" value="{{ offer.vehicleData.identificationNumber }}">
+                    <input type="text" id="vehicleData.identificationNumber" name="vehicleData.identificationNumber" class="form-control" value="{{ offer.vehicleData.identificationNumber }}" data-dependent="true" data-depends-on="#vehicleData.manufacturerNo" data-error-msg="Hersteller-Nr. wurde geändert. Das Feld 'Fahrgestell-Nr.' wird zurückgesetzt.">
                   </div>
                 </div>
               </fieldset>
