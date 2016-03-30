@@ -34,6 +34,8 @@ $(document).on('ready pjax:success', () => {
     })
   })
 
+  $('.onebox [type=submit]').remove()
+
   $('time[datetime]').each((_i, item) => {
     moment.locale('de')
     let time = moment($(item).attr('datetime')).local()
