@@ -133,24 +133,6 @@
                     {{/ errors.personal.district }}
                   </div>
                 </div>
-
-                {{# errors.personal.job }}
-                <div class="form-group has-error">
-                {{/ errors.personal.job }}
-                {{^ errors.personal.job }}
-                <div class="form-group">
-                {{/ errors.personal.job }}
-                  <label for="personal.job" class="control-label">Beruf</label>
-                  <div class="fields">
-                    <select id="personal.job" name="personal.job" class="form-control">
-                      <option>{{ offer.personal.job }}</option>
-                      <option>…</option>
-                    </select>
-                    {{# errors.personal.job }}
-                    <span class="help-block">{{ errors.personal.job.fehlerText }}</span>
-                    {{/ errors.personal.job }}
-                  </div>
-                </div>
               </fieldset>
             </div>
 
