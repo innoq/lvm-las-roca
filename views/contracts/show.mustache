@@ -246,7 +246,7 @@
                         {{ dob }}
                       </td>
                       <td>
-                        <a href="{{ personUri }}" class="btn btn-default btn-xs" data-pjax="active">Öffnen</a>
+                        <a href="{{ personEditUri }}" class="btn btn-default btn-xs" data-pjax="active">Öffnen</a>
                       </td>
                     </tr>
                     {{/ contract.nutzung.people }}
@@ -255,9 +255,9 @@
               </div>
               {{/ contract.nutzung.people.length }}
 
-
-
-
+              <button type="button" class="btn btn-default">
+                Person hinzufügen
+              </button>
             </form>
           </div>
 
