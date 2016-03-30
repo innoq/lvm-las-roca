@@ -56,7 +56,12 @@
                 {{^ errors.personal.dob }}
                 <div class="form-group">
                 {{/ errors.personal.dob }}
-                  <label for="personal.dob" class="control-label">Geburtsdatum</label>
+                  <label for="personal.dob" class="control-label">
+                    Geburtsdatum
+                    <a class="control-label-help-link" href="/help/example" data-preview="enabled" data-preview-title="Hilfe" data-preview-selector="div.help-description" data-preview-error-msg="Hilfe nicht abrufbar!" data-preview-window>
+                      <i class="icon-question"></i>
+                    </a>
+                  </label>
                   <div class="fields form-inline">
                     <input type="text" id="personal.dob" name="personal.dob" class="form-control" value="{{ offer.personal.dob }}">
                     {{# errors.personal.dob }}

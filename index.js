@@ -59,6 +59,7 @@ app.use('/assets', express.static('public'))
 
 app.get('/', searchController.get)
 app.get('/help/shortcuts', helpController.shortcuts)
+app.get('/help/example', helpController.example)
 app.get('/result', resultController.get)
 app.get('/partners/:id', partnersController.get)
 app.get('/partners/:id/branches/:branch', branchesController.show)
