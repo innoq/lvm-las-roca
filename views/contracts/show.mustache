@@ -188,6 +188,7 @@
                     <input type="text" id="kfz-kilometerstand" class="form-control" value="{{ contract.nutzung.kilometerstand }}" disabled>
                   </div>
                 </div>
+
               </fieldset>
 
               <fieldset class="scene-fieldset">
@@ -219,6 +220,44 @@
                   </div>
                 </div>
               </fieldset>
+
+              {{# contract.nutzung.people.length }}
+              <h3>Versicherte Personen ({{ contract.nutzung.people.length }})</h3>
+              <div class="table-responsive">
+                <table class="people-overview table">
+                  <thead>
+                    <tr>
+                      <th class="sort" data-sort="col-people-id">#</th>
+                      <th class="sort" data-sort="col-people-name">Name</th>
+                      <th class="sort" data-sort="col-people-dob">Geburtsdatum</th>
+                      <th>Aktion</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {{# contract.nutzung.people }}
+                    <tr>
+                      <td class="col-people-id">
+                        {{ id }}
+                      </td>
+                      <td class="col-people-name">
+                        {{ firstName }} {{ name }}
+                      </td>
+                      <td class="col-people-dob">
+                        {{ dob }}
+                      </td>
+                      <td>
+                        <a href="{{ personEditUri }}" class="btn btn-default btn-xs" data-pjax="active">Öffnen</a>
+                      </td>
+                    </tr>
+                    {{/ contract.nutzung.people }}
+                  </tbody>
+                </table>
+              </div>
+              {{/ contract.nutzung.people.length }}
+
+              <button type="button" class="btn btn-default">
+                Person hinzufügen
+              </button>
             </form>
           </div>
 
