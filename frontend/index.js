@@ -2,6 +2,7 @@ import 'lvm-las-assets'
 import $ from 'jquery'
 import simplete from 'simplete'
 import moment from 'moment'
+import 'select2'
 
 require('./pjax')
 
@@ -17,6 +18,19 @@ $(document).on('ready pjax:success', () => {
       minLength: parseInt($(field).data('complete-min-length')),
       resultWrapper: `.${resultsClass}`,
       selectedClass: 'current'
+    })
+  })
+
+  $('[data-selectify=active]').each((_i, field) => {
+    const target = $(field).data('selectify-target')
+    $('.fields', field).empty().append("<select style='width: 100%'></select>")
+
+    $('.fields select', field).select2({
+      ajax: {
+        dataType: 'json',
+        url: target
+      },
+      minimumInputLength: 3
     })
   })
 

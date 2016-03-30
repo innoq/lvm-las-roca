@@ -65,6 +65,15 @@
                   </div>
                 </div>
 
+                <div data-selectify="active" data-selectify-target="/jobs/results" class="form-group">
+                  <label for="personal.job-id" class="control-label">Berufs ID</label>
+                  <div class="fields form-inline">
+                    <input type="text" id="personal.job-id" name="personal.job-id" class="form-control">
+                    <span class="help-block">
+                      <a href="/jobs" target="_blank">Zur Berufssuche</a>
+                  </div>
+                </div>
+
                 {{# errors.personal.street }}
                 <div class="form-group has-error">
                 {{/ errors.personal.street }}
@@ -122,24 +131,6 @@
                     {{# errors.personal.district }}
                     <span class="help-block">{{ errors.personal.district.fehlerText }}</span>
                     {{/ errors.personal.district }}
-                  </div>
-                </div>
-
-                {{# errors.personal.job }}
-                <div class="form-group has-error">
-                {{/ errors.personal.job }}
-                {{^ errors.personal.job }}
-                <div class="form-group">
-                {{/ errors.personal.job }}
-                  <label for="personal.job" class="control-label">Beruf</label>
-                  <div class="fields">
-                    <select id="personal.job" name="personal.job" class="form-control">
-                      <option>{{ offer.personal.job }}</option>
-                      <option>…</option>
-                    </select>
-                    {{# errors.personal.job }}
-                    <span class="help-block">{{ errors.personal.job.fehlerText }}</span>
-                    {{/ errors.personal.job }}
                   </div>
                 </div>
               </fieldset>

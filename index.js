@@ -9,6 +9,7 @@ const offersController = require('./lib/controllers/offers')
 const proposalsController = require('./lib/controllers/proposals')
 const contractsController = require('./lib/controllers/contracts')
 const branchesController = require('./lib/controllers/branches')
+const jobsController = require('./lib/controllers/jobs')
 const compression = require('compression')
 const inProduction = (process.env.NODE_ENV === 'production')
 
@@ -70,6 +71,8 @@ app.post('/partners/:id/offers/calculation', offersController.calc)
 app.get('/partners/:id/proposals', proposalsController.index)
 app.get('/partners/:id/contracts', contractsController.index)
 app.get('/partners/:id/contracts/:contract_id', contractsController.show)
+app.get('/jobs', jobsController.index)
+app.get('/jobs/results', jobsController.results)
 
 module.exports = app
 
