@@ -94,11 +94,11 @@
 * 25.03. (Lucas: 0h, Marc: 0h)
   * Feiertag Karfreitag
 
-  ### Zwischenstand:
+### Zwischenstand:
 
-  * Lucas: 145h
-  * Marc: 126,5h
-  * Insgesamt 271,5h von 320h
+* Lucas: 145h
+* Marc: 126,5h
+* Insgesamt 271,5h von 320h
 
 ## KW 13
 
