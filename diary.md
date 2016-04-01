@@ -94,18 +94,26 @@
 * 25.03. (Lucas: 0h, Marc: 0h)
   * Feiertag Karfreitag
 
+  ### Zwischenstand:
+
+  * Lucas: 145h
+  * Marc: 126,5h
+  * Insgesamt 271,5h von 320h
+
 ## KW 13
 
 * 28.03. (Lucas: 0h, Marc: 0h)
   * Feiertag Ostermontag
-* 29.03. (Lucas: 8h, Marc: h)
+* 29.03. (Lucas: 8h, Marc: 8h)
   * Dokumentation
-* 30.03. (Lucas: 8h, Marc: h)
-* 31.03. (Lucas: 8h, Marc: h)
+* 30.03. (Lucas: 9h, Marc: 10h)
+  * DependentInputs
+  * Dokumentation, Deployment, Test
+* 31.03. (Lucas: 7h, Marc: 7h)
   * Abschluss
 
-### Zwischenstand:
+### Endstand:
 
-* Lucas:
-* Marc: 126,5h
-* Insgesamt X h von 320h
+* Lucas: 169h
+* Marc: 151,5h
+* Insgesamt 320,5 h von 320h
