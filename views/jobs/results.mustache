@@ -9,7 +9,16 @@
     <dl class="dl-horizontal">
       {{# results }}
         <dt>{{ name }}</dt>
+        {{# referer }}
+        <dd>
+        <a href="{{ referer }}?personal.job-id={{ berufId }}">
+          {{ berufId }}
+        </a>
+        {{/ referer }}
+
+        {{^ referer }}
         <dd>{{ berufId }}</dd>
+        {{/ referer }}
       {{/ results }}
     </dl>
   </div>

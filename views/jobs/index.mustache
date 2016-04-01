@@ -15,6 +15,9 @@
               <label for="query" class="control-label">Suchbegriff</label>
               <div class="fields">
                 <input type="text" id="query" name="query" class="form-control">
+                {{# referer }}
+                <input type="hidden" id="referer" name="referer" value="{{ referer }}">
+                {{/ referer }}
               </div>
             </div>
           </fieldset>
