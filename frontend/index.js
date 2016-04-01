@@ -21,18 +21,18 @@ $(document).on('ready pjax:success', () => {
     })
   })
 
-  $('[data-selectify=active]').each((_i, field) => {
-    const target = $(field).data('selectify-target')
-    $('.fields', field).empty().append("<select style='width: 100%'></select>")
-
-    $('.fields select', field).select2({
-      ajax: {
-        dataType: 'json',
-        url: target
-      },
-      minimumInputLength: 3
-    })
-  })
+  // $('[data-selectify=active]').each((_i, field) => {
+  //   const target = $(field).data('selectify-target')
+  //   $('.fields', field).empty().append("<select style='width: 100%'></select>")
+  //
+  //   $('.fields select', field).select2({
+  //     ajax: {
+  //       dataType: 'json',
+  //       url: target
+  //     },
+  //     minimumInputLength: 3
+  //   })
+  // })
 
   $('.onebox [type=submit]').remove()
 
