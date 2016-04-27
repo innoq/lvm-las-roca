@@ -34,9 +34,11 @@ if (inProduction) {
   app.use(passport.authenticate('basic', { session: false }))
 }
 
+
 app.locals.postbox_url = process.env.POSTBOX_URL || 'http://localhost:9000'
 app.locals.letter_url = process.env.LETTER_URL || 'http://localhost:9100'
-app.locals.damage_url = process.env.DAMAGE_URL
+app.locals.damage_url = process.env.DAMAGE_URL || 'http://localhost:9200'
+
 
 app.use(require('./lib/render_without_layout'))
 
@@ -85,6 +87,6 @@ if (module.parent === null) {
 
   Promise.all([
     backend.listen(5100),
-    app.listen(process.env.PORT || 8080)
-  ]).then(() => console.log('Listening on port 8080!'))
+    app.listen(process.env.PORT || 9400)
+  ]).then(() => console.log('Listening on port 9400 !'))
 }
