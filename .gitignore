@@ -4,6 +4,6 @@
 .vagrant
 /node_modules
 /.eslintcache
-
+.idea/
 # Ignore generated assets
 public
