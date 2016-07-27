@@ -71,5 +71,5 @@ if (module.parent === null) {
   Promise.all([
     backend.listen(5100),
     app.listen(process.env.PORT || 8080)
-  ]).then(() => console.log('Listening on port 8080!'))
+  ]).then(() => console.log(`Listening on port ${process.env.PORT || 8080}!`))
 }
