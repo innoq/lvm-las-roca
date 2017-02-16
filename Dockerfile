@@ -1,15 +1,10 @@
-FROM node:6.3
+FROM hypriot/rpi-node
 
-ENV HOME=/home/app
-
-WORKDIR $HOME
-
-COPY package.json $HOME
+COPY . /home/app
 
 # install dependencies
+WORKDIR /home/app
 RUN npm install
-
-COPY . $HOME
 
 # compile assets
 RUN npm run compile
